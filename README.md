@@ -1,2 +1,2 @@
-# client-side-automation
-Client-Side automation framework on Selenium base
+# client-side-automation-framework
+Selenium automation framework
