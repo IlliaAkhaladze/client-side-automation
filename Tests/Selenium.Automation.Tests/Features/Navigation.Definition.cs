@@ -1,4 +1,6 @@
-﻿using Selenium.Automation.Model.Domain.Login;
+﻿using FluentAssertions;
+
+using Selenium.Automation.Model.Domain.Login;
 using Selenium.Automation.Model.Domain.Navigation;
 
 using TechTalk.SpecFlow;
@@ -34,8 +36,9 @@ namespace Selenium.Automation.Tests.Features
 		[Then(@"I see '(.*)' header")]
 		public void ThenISeeЮтериТаНоутбукиHeader(string expectedValue)
 		{
-			throw new PendingStepException();
+			_navigationSteps.GetHeader()
+				.Should()
+				.Be(expectedValue);
 		}
-
 	}
 }

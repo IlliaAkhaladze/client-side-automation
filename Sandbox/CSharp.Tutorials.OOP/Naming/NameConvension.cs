@@ -1,19 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.Json.Serialization;
-using System.Threading;
-using System.Threading.Tasks;
 
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 
 namespace CSharp.Tutorials.OOP.Naming
 {
 	public interface IServiceProvider
 	{
-
 	}
 
 	public class NameConvension
@@ -51,7 +43,7 @@ namespace CSharp.Tutorials.OOP.Naming
 			Console.WriteLine($"Args: [{appartment} appartment, {id} id, {value} value, {count} count, {timeout} timeout].");
 			Console.WriteLine($"Args: [{JsonConvert.SerializeObject(appartment)}]");
 		}
-		
+
 		public void Proceed(
 			AppartmentView appartmentView)
 		{
@@ -60,17 +52,17 @@ namespace CSharp.Tutorials.OOP.Naming
 		}
 
 		public bool IsChecked()
-		{ 
-			return true; 
+		{
+			return true;
 		}
 
-		public Appartment GetAppartment() 
+		public Appartment GetAppartment()
 		{
 			return GetAppartment();
 		}
 
 		public void SetValue(
-			string value, 
+			string value,
 			Appartment appartment)
 		{
 

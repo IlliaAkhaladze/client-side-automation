@@ -24,6 +24,9 @@ namespace Selenium.Automation.UI.Navigation
 			this.FindAll<HtmlLink>(new Locator(How.XPath, ".//rz-main-page-sidebar//a[contains(@class, 'menu-categories__link')]"))
 			.ToArray();
 
+		[FindBy(How.XPath, ".//h1")]
+		public HtmlLabel Header { get; set; }
+
 		public HtmlLink GetHtmlLink(string text)
 		{
 			try
@@ -37,6 +40,5 @@ namespace Selenium.Automation.UI.Navigation
 				return null;
 			}
 		}
-			
 	}
 }

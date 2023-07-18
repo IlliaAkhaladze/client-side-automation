@@ -2,6 +2,7 @@
 {
 	public interface INavigationSteps
 	{
+		string GetHeader();
 		void Open(string linkText);
 	}
 }
