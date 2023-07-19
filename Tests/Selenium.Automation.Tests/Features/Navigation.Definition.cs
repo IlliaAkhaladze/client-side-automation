@@ -34,7 +34,7 @@ namespace Selenium.Automation.Tests.Features
 		}
 
 		[Then(@"I see '(.*)' header")]
-		public void ThenISeeЮтериТаНоутбукиHeader(string expectedValue)
+		public void ThenISeeЇтериТаНоутбукиHeader(string expectedValue)
 		{
 			_navigationSteps.GetHeader()
 				.Should()
