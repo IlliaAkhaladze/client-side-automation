@@ -2,6 +2,7 @@
 {
     public interface IHamburgerMenuSteps
     {
-        void OpenMenu(string buttonText);
+        bool IsMenuDisplayed();
+        void OpenMenu();
     }
 }

@@ -63,6 +63,9 @@
 		<Compile Update="Features\Navigation.Definition.cs">
 			<DependentUpon>NavigationScenarios.feature</DependentUpon>
 		</Compile>
+    <Compile Update="Features\HamburgerMenu.Definition.cs">
+      <DependentUpon>HamburgerMenuScenarios.feature</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">

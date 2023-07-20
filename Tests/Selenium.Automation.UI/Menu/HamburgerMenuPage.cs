@@ -6,9 +6,9 @@ using Selenium.Automation.Platform.WebElements;
 
 namespace Selenium.Automation.UI.Menu
 {
-    public class HamburgerMenu : WebPage
+    public class HamburgerMenuPage : WebPage
     {
-        public HamburgerMenu(
+        public HamburgerMenuPage(
             IWebDriver webDriver) : base(webDriver)
         {
         }
@@ -16,9 +16,9 @@ namespace Selenium.Automation.UI.Menu
         [FindBy(OpenQA.Selenium.Support.PageObjects.How.XPath, ".//rz-mobile-user-menu/button")]
         public HtmlButton HamburgerButton { get; set; }
 
-        [FindBy( OpenQA.Selenium.Support.PageObjects.How.XPath, ".//class='drawer ng-star-inserted'")]
+        [FindBy( OpenQA.Selenium.Support.PageObjects.How.XPath, ".//div[contains(@class, 'side-menu__body')]")]
         public HtmlElement HamburgerMenuFrame { get; set;}
 
-
+       
     }
 }

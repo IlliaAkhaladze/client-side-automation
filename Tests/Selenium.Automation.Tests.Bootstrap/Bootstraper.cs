@@ -8,6 +8,7 @@ using RestSharp;
 
 using Selenium.Automation.Domain.Login;
 using Selenium.Automation.Domain.Search;
+using Selenium.Automation.Model.Domain.HamburgerMenu;
 using Selenium.Automation.Model.Domain.Login;
 using Selenium.Automation.Model.Domain.Navigation;
 using Selenium.Automation.Model.Domain.Poduct;
@@ -19,6 +20,7 @@ using Selenium.Automation.Platform.Configuration.Environment;
 using Selenium.Automation.Platform.Configuration.Run;
 using Selenium.Automation.Platform.Driver;
 using Selenium.Automation.UI.Login;
+using Selenium.Automation.UI.Menu;
 using Selenium.Automation.UI.Navigation;
 using Selenium.Automation.UI.Product;
 using Selenium.Automation.UI.Search;
@@ -61,8 +63,9 @@ namespace Selenium.Automation.Tests.Bootstrap
 			Builder.RegisterType<ProductTopSteps>().As<IProductTopSteps>().SingleInstance();
 			Builder.RegisterType<SearchContext>().As<ISearchContext>().SingleInstance();
 			Builder.RegisterType<NavigationSteps>().As<INavigationSteps>().SingleInstance();
+            Builder.RegisterType<HamburgerMenuSteps>().As<IHamburgerMenuSteps>().SingleInstance();
 
-			Builder.RegisterType<WebDriver>().As<IWebDriver>().SingleInstance();
+            Builder.RegisterType<WebDriver>().As<IWebDriver>().SingleInstance();
 		}
 	}
 }

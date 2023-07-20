@@ -1,7 +1,7 @@
+using FluentAssertions;
 using Selenium.Automation.Model.Domain.HamburgerMenu;
 using Selenium.Automation.Model.Domain.Login;
 using TechTalk.SpecFlow;
-
 namespace Selenium.Automation.Tests.Features
 {
     [Binding, Scope(Feature = "HamburgerMenuScenarios")]
@@ -24,16 +24,17 @@ namespace Selenium.Automation.Tests.Features
             _loginSteps.OpenMainView();
         }
 
-        [When(@"I click '([^']*)' button")]
-        public void WhenIClickButton(string buttonText)
+        [When(@"I expand hamburger menu")]
+        public void WhenIExpandHamburgerMenu()
         {
-            _hamburgerMenuSteps.OpenMenu(buttonText);
+           _hamburgerMenuSteps.OpenMenu();
         }
 
         [Then(@"I see hamburger menu expanded")]
-        public void ThenISeeHamburgerMenuExpanded(bool expectedResult)
+        public void ThenISeeHamburgerMenuExpanded()
         {
-
+            bool actualValue = _hamburgerMenuSteps.IsMenuDisplayed();
+            actualValue.Should().BeTrue();
         }
 
 
