@@ -19,34 +19,41 @@ namespace Selenium.Automation.Tests.Features
             _navigationSteps = navigationSteps;
         }
 
-        [Given(@"I open '(.*)' page")]
-        public void GivenIOpenPage(string directLink)
-        {
-            
-        }
+		[Given(@"I open main view")]
+		public void GivenIOpenMainView()
+		{
+			_loginSteps.OpenMainView();
+		}
 
-        //[When(@"I filter goods by ""([^""]*)""")]
-        //public void WhenIFilterGoodsBy(string платформа)
-        //{
-        //    throw new PendingStepException();
-        //}
+		[Given(@"I open '([^']*)' page")]
+		public void GivenIOpenPage(string p0)
+		{
+			throw new PendingStepException();
+		}
 
-        //[When(@"I select filter category value ""([^""]*)""")]
-        //public void WhenISelectFilterCategoryValue(string p0)
-        //{
-        //    throw new PendingStepException();
-        //}
+		[When(@"I filter goods by '([^']*)'")]
+		public void WhenIFilterGoodsBy(string платформа)
+		{
+			throw new PendingStepException();
+		}
 
-        //[Then(@"I see selected filter options above goods")]
-        //public void ThenISeeSelectedFilterOptionsAboveGoods()
-        //{
-        //    throw new PendingStepException();
-        //}
+		[When(@"I select filter category value '([^']*)'")]
+		public void WhenISelectFilterCategoryValue(string p0)
+		{
+			throw new PendingStepException();
+		}
 
-        //[Then(@"I see ""([^""]*)"" header")]
-        //public void ThenISeeHeader(string p0)
-        //{
-        //    throw new PendingStepException();
-        //}
-    }
+		[Then(@"I see selected filter options above goods")]
+		public void ThenISeeSelectedFilterOptionsAboveGoods()
+		{
+			throw new PendingStepException();
+		}
+
+		[Then(@"I see '([^']*)' header")]
+		public void ThenISeeHeader(string p0)
+		{
+			throw new PendingStepException();
+		}
+
+	}
 }
