@@ -30,17 +30,19 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\RestSharp.Automation.Bootstrap\RestSharp.Automation.Bootstrap.csproj" />
-	  <ProjectReference Include="..\RestSharp.Automation.TestData\RestSharp.Automation.TestData.csproj" />
+		<ProjectReference Include="..\RestSharp.Automation.Bootstrap\RestSharp.Automation.Bootstrap.csproj" />
+		<ProjectReference Include="..\RestSharp.Automation.TestData\RestSharp.Automation.TestData.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="Features\PetStore.Definition.cs">
+			<DependentUpon>Pet Store.feature</DependentUpon>
+		</Compile>
 	</ItemGroup>
 
 	<ItemGroup>
 		<None Update="env.demo.json">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</None>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Features\" />
 	</ItemGroup>
 </Project>
