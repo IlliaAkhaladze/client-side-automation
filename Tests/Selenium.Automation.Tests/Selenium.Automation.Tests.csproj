@@ -39,6 +39,7 @@
     <ProjectReference Include="..\..\Model\Selenium.Automation.Model.Domain\Selenium.Automation.Model.Domain.csproj" />
     <ProjectReference Include="..\..\Platform\Selenium.Automation.Platform\Selenium.Automation.Platform.csproj" />
     <ProjectReference Include="..\Selenium.Automation.Tests.Bootstrap\Selenium.Automation.Tests.Bootstrap.csproj" />
+    <ProjectReference Include="..\Selenium.Automation.TestsData\Selenium.Automation.TestsData.csproj" />
   </ItemGroup>
 
   <ItemGroup>

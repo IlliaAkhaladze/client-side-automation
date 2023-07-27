@@ -5,8 +5,10 @@ using Selenium.Automation.Platform.Element;
 using Selenium.Automation.Platform.Page;
 using Selenium.Automation.Platform.WebElements;
 using Selenium.Automation.Platform.WebElements.CheckBox;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+
 
 namespace Selenium.Automation.UI.Filter
 {
@@ -34,6 +36,8 @@ namespace Selenium.Automation.UI.Filter
             this.FindAll<HtmlLink>(new Locator(How.XPath, ".//rz-filter-stack//div[contains (@class, 'sidebar-block__toggle-title')]"))
             .ToArray();
 
+        public object Url => "ua/consoles/c80020/";
+
         public string[] FilterCategoriesLists()
         {
             List<string> filterCatList = new List<string>();
@@ -45,5 +49,24 @@ namespace Selenium.Automation.UI.Filter
             return filterCatList.ToArray();
         }
 
+        public HtmlLink[] CatalogSelectedItem =>
+            this.FindAll<HtmlLink>(new Locator(How.XPath, ".//rz-catalog-settings//li"))
+            .ToArray();
+
+        public HtmlLink[] GetFilterSelectedItem(string selectedFilterName)
+        {
+            try
+            {
+                var locator = $".//rz-catalog-settings//div[contains(@'{selectedFilterName}')]]/a ]";
+                return FindAll<HtmlLink>(new Locator(How.XPath, locator)).ToArray();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Ex: [{ex}].");
+                return null;
+            }
+
+        }
     }
+
 }

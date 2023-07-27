@@ -2,9 +2,6 @@
 using Selenium.Automation.Model.Platform.Locator;
 using Selenium.Automation.Model.Platform.WebElements.CheckBox;
 using Selenium.Automation.Platform.Element;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Selenium.Automation.Platform.WebElements.CheckBox
 {

@@ -1,6 +1,7 @@
+using FluentAssertions;
 using Selenium.Automation.Model.Domain.Filter;
 using Selenium.Automation.Model.Domain.Login;
-using Selenium.Automation.Model.Domain.Navigation;
+using Selenium.Automation.TestsData.Storage;
 using TechTalk.SpecFlow;
 
 namespace Selenium.Automation.Tests.Features
@@ -8,15 +9,18 @@ namespace Selenium.Automation.Tests.Features
     [Binding, Scope(Feature = "Filter")]
     public class FilterStepDefinitions
     {
-        private readonly IFilterSteps _filter;
+        private readonly IFilterSteps _filterSteps;
         private readonly ILoginSteps _loginSteps;
-        private readonly INavigationSteps _navigationSteps;
 
-        public FilterStepDefinitions(      
-                INavigationSteps navigationSteps)
-
-        {           
-            _navigationSteps = navigationSteps;
+        private string[] _actualFilters;
+        private string _checkedOptions;
+     
+        public FilterStepDefinitions( 
+				IFilterSteps filterSteps,
+                ILoginSteps loginSteps)
+        {
+			_loginSteps = loginSteps;
+            _filterSteps = filterSteps;       
         }
 
 		[Given(@"I open main view")]
@@ -25,35 +29,48 @@ namespace Selenium.Automation.Tests.Features
 			_loginSteps.OpenMainView();
 		}
 
-		[Given(@"I open '([^']*)' page")]
-		public void GivenIOpenPage(string p0)
+		[Given(@"I open goods category")]
+		public void GivenIOpenPage()
 		{
-			throw new PendingStepException();
+			_filterSteps.OpenCategory();			
 		}
 
-		[When(@"I filter goods by '([^']*)'")]
-		public void WhenIFilterGoodsBy(string платформа)
-		{
-			throw new PendingStepException();
-		}
+        [When(@"I get filters by '(.*)' category")]
+        public void WhenIGetFilters(string category)
+        {
+            _actualFilters = _filterSteps.GetFilters(category);            
+        }
 
-		[When(@"I select filter category value '([^']*)'")]
-		public void WhenISelectFilterCategoryValue(string p0)
-		{
-			throw new PendingStepException();
-		}
+        [Then(@"I see '(.*)' filters")]
+        public void ThenISeeFilters(string entityname)
+        {
+            var expectedvalues = GoodsCategoryStorage.Values[entityname];
+            _actualFilters
+                .Should()
+                .Contain(expectedvalues);
+        }
 
-		[Then(@"I see selected filter options above goods")]
-		public void ThenISeeSelectedFilterOptionsAboveGoods()
-		{
-			throw new PendingStepException();
-		}
+        [When(@"I check '([^']*)' checkbox")]
+        public void WhenICheckCheckbox(string filterName)
+        {
+            _checkedOptions = _filterSteps.SetSubFilter(true, filterName);
+        }
 
-		[Then(@"I see '([^']*)' header")]
-		public void ThenISeeHeader(string p0)
-		{
-			throw new PendingStepException();
-		}
+        [Then(@"I see '([^']*)' filters at page top")]
+        public void ThenISeeSelectedFilters (string filterSelected)
+        {
 
-	}
+            _filterSteps.GetSelectedFilters(filterSelected);
+            _filterSteps
+              .Should()
+              .Equals(_checkedOptions);
+                
+                
+        }
+
+
+
+
+
+    }
 }
