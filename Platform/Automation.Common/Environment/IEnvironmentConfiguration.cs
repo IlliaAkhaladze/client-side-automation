@@ -1,4 +1,4 @@
-﻿namespace Selenium.Automation.Platform.Configuration.Environment
+﻿namespace Automation.Common.Environment
 {
 	public interface IEnvironmentConfiguration
 	{

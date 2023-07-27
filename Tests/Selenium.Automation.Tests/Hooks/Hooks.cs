@@ -1,12 +1,13 @@
 ﻿using System;
 
+using Automation.Common.Environment;
+
 using AventStack.ExtentReports;
 using AventStack.ExtentReports.Gherkin.Model;
 using AventStack.ExtentReports.Reporter;
 
 using OpenQA.Selenium;
 
-using Selenium.Automation.Platform.Configuration.Environment;
 using Selenium.Automation.Platform.Driver;
 
 using Serilog;

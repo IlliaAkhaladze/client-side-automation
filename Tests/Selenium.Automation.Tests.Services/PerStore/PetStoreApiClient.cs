@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Selenium.Automation.Tests.Services.PerStore
+﻿namespace Selenium.Automation.Tests.Services.PerStore
 {
 	public interface IPetStoreApiClient
 	{

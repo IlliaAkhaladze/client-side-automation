@@ -1,12 +1,12 @@
 ﻿using System.Threading.Tasks;
 
-using RestSharp;
+using RestSharp.Automation.Model.Platform.Client;
 
-namespace Selenium.Automation.Model.Platform.Communication
+namespace RestSharp.Automation.Model.Platform.Communication
 {
 	public interface IClient
 	{
-		Task<IRestResponse> ExecuteAsync(IRestRequest request);
+		Task<ClientResponse> ExecuteAsync(ClientRequest request);
 		void SetBaseUri(string baseUri);
 		void AddHttpBasicAuthenticator(string userName, string password);
 	}

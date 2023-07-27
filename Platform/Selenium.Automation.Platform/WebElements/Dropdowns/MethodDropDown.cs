@@ -7,7 +7,6 @@ using Selenium.Automation.Model.Platform.Locator;
 using Selenium.Automation.Model.Platform.WebElements.Dropdowns;
 using Selenium.Automation.Platform.Element;
 using Selenium.Automation.Platform.Waiter;
-using Selenium.Automation.Platform.WebElements;
 
 namespace Selenium.Automation.Platform.WebElements.Dropdowns
 {
