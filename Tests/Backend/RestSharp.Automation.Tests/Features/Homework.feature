@@ -1,9 +1,9 @@
 ﻿@ignore
+@homework
 Feature: Homework
 
 A short summary of the feature
 
-@homework
 @C
 Scenario: 1. Validate that user can be created
 	Given 
@@ -39,6 +39,3 @@ Scenario: 6. Validate that user can be deleted unsuccsefully
 	Given 
 	When 
 	Then 
-
-
-
