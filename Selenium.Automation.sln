@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Selenium.Automation.UI", "T
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Selenium.Automation.TestsData", "Tests\Selenium.Automation.TestsData\Selenium.Automation.TestsData.csproj", "{D209EE7F-7069-4C65-A176-1BD0A845DB4A}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Selenium.Automation.Tests.Services", "Tests\Selenium.Automation.Tests.Services\Selenium.Automation.Tests.Services.csproj", "{86B7B0AD-C652-43DA-A0BD-F204D66BFEEA}"
+EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Selenium.Automation.Tests.Bootstrap", "Tests\Selenium.Automation.Tests.Bootstrap\Selenium.Automation.Tests.Bootstrap.csproj", "{BFA92A7A-953B-4356-BF6F-B806B82401E6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Selenium.Automation.Tests", "Tests\Selenium.Automation.Tests\Selenium.Automation.Tests.csproj", "{F872B5E7-C200-4B10-B43C-87FF4053E6ED}"
@@ -31,7 +33,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sandbox", "Sandbox", "{620B
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharp.Tutorials", "Sandbox\CSharp.Tutorials\CSharp.Tutorials.csproj", "{2C67B960-B92A-4DDF-8828-E4E874D4E783}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharp.Tutorials.OOP", "Sandbox\CSharp.Tutorials.OOP\CSharp.Tutorials.OOP.csproj", "{2B7A0FF0-4AD3-4F4B-909D-227DE4838A7B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.Tutorials.OOP", "Sandbox\CSharp.Tutorials.OOP\CSharp.Tutorials.OOP.csproj", "{2B7A0FF0-4AD3-4F4B-909D-227DE4838A7B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestSharp.Automation.Model.Platform", "Model\RestSharp.Automation.Model.Platform\RestSharp.Automation.Model.Platform.csproj", "{F4CEC487-A33D-4ADB-9DFE-26B9795E3014}"
 EndProject
@@ -69,6 +71,10 @@ Global
 		{D209EE7F-7069-4C65-A176-1BD0A845DB4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D209EE7F-7069-4C65-A176-1BD0A845DB4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D209EE7F-7069-4C65-A176-1BD0A845DB4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86B7B0AD-C652-43DA-A0BD-F204D66BFEEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86B7B0AD-C652-43DA-A0BD-F204D66BFEEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86B7B0AD-C652-43DA-A0BD-F204D66BFEEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86B7B0AD-C652-43DA-A0BD-F204D66BFEEA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BFA92A7A-953B-4356-BF6F-B806B82401E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BFA92A7A-953B-4356-BF6F-B806B82401E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BFA92A7A-953B-4356-BF6F-B806B82401E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -137,6 +143,7 @@ Global
 		{95B6DDB9-643E-4056-AD02-18AC84F93D5E} = {EB8CE96B-15FE-4299-91C5-4FF0E8FCCE0A}
 		{F2EB70AE-7F57-40A2-89E5-2627C11249E9} = {1C479FF5-2B19-4F1B-96D9-0D9954FB9517}
 		{D209EE7F-7069-4C65-A176-1BD0A845DB4A} = {1C479FF5-2B19-4F1B-96D9-0D9954FB9517}
+		{86B7B0AD-C652-43DA-A0BD-F204D66BFEEA} = {1C479FF5-2B19-4F1B-96D9-0D9954FB9517}
 		{BFA92A7A-953B-4356-BF6F-B806B82401E6} = {1C479FF5-2B19-4F1B-96D9-0D9954FB9517}
 		{F872B5E7-C200-4B10-B43C-87FF4053E6ED} = {1C479FF5-2B19-4F1B-96D9-0D9954FB9517}
 		{AEFC8A62-CAED-4720-BE90-DDB4D2DE2F90} = {EBB13C36-E527-4050-8681-17B22A57402F}
