@@ -5,6 +5,10 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <Compile Include="Features\Homework.feature" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Autofac.Configuration" Version="6.0.0" />
 		<PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.2.0" />
 		<PackageReference Include="ExtentReports.Core" Version="1.0.3" />
