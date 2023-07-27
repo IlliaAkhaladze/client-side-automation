@@ -5,7 +5,11 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <Compile Include="Features\Homework.feature" />
+	  <Compile Remove="Features\Homework1.feature.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <SpecFlowFeatureFiles Remove="Features\Homework1.feature" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -34,8 +38,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\RestSharp.Automation.Bootstrap\RestSharp.Automation.Bootstrap.csproj" />
-		<ProjectReference Include="..\RestSharp.Automation.TestData\RestSharp.Automation.TestData.csproj" />
+	  <ProjectReference Include="..\RestSharp.Automation.Bootstrap\RestSharp.Automation.Bootstrap.csproj" />
+	  <ProjectReference Include="..\RestSharp.Automation.TestData\RestSharp.Automation.TestData.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
