@@ -1,5 +1,7 @@
 ﻿using System;
 
+using Automation.Common.Environment;
+
 using Selenium.Automation.Model.Domain.Login;
 using Selenium.Automation.Model.Platform.Drivers;
 using Selenium.Automation.Platform.Configuration.Environment;

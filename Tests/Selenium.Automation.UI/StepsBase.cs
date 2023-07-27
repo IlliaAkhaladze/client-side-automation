@@ -1,4 +1,6 @@
-﻿using Selenium.Automation.Model.Platform.Drivers;
+﻿using Automation.Common.Environment;
+
+using Selenium.Automation.Model.Platform.Drivers;
 using Selenium.Automation.Platform.Configuration.Environment;
 
 namespace Selenium.Automation.UI

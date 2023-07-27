@@ -1,20 +1,43 @@
-﻿using CSharp.Tutorials.OOP;
-using CSharp.Tutorials.OOP.Car;
+﻿using System.Net;
+
 using CSharp.Tutorials.OOP.Generic;
+using CSharp.Tutorials.OOP.Patterns;
 
 namespace CSharp.Tutorials
 {
 	internal class Program
 	{
+
 		static void Main(string[] args)
 		{
 			Console.WriteLine("Hello, World!");
+			var dog = BuilderDog
+				.AddName("Dumn")
+				.AddAge(12)
+				.AddHeight(20)
+				.AddIsAlive(true)
+				.AddParrent("I am parrent")
+				.AddCount(1)
+				.Build();
+			var dog2 = BuilderDog
+				.AddName("Dumn")
+				.AddAge(12)
+				.AddHeight(20)
+				.Build();
+
+
+
 			//Calculator  calculator = new Calculator();
 			//calculator.Plus();
 
 			//CalculatorV2 calculatorV2 = new CalculatorV2();
 			//calculatorV2.Plus();
 			//calculatorV2.Plus(3, 7);
+			List<object> obList = new List<object>();
+			obList.Add(1);
+			obList.Add("1");
+			obList.Add(HttpStatusCode.Accepted);
+
 			var dogStorage = new Storage<DogStorage>();
 			var catStorage = new Storage<CatStorage>();
 

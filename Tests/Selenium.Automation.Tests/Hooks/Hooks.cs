@@ -1,5 +1,7 @@
 ﻿using System;
 
+using Automation.Common.Environment;
+
 using AventStack.ExtentReports;
 using AventStack.ExtentReports.Gherkin.Model;
 using AventStack.ExtentReports.Reporter;

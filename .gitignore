@@ -13,3 +13,6 @@
 *.user
 /*/TestResults
 *.txt
+/**/bin/**
+/**/obj/**
+
