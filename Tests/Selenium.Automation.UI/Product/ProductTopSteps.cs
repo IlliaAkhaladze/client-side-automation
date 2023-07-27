@@ -3,7 +3,6 @@ using Automation.Common.Environment;
 
 using Selenium.Automation.Model.Domain.Poduct;
 using Selenium.Automation.Model.Platform.Drivers;
-using Selenium.Automation.Platform.Configuration.Environment;
 using Selenium.Automation.Platform.Factory;
 
 namespace Selenium.Automation.UI.Product

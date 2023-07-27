@@ -15,10 +15,7 @@ using Selenium.Automation.Model.Domain.Login;
 using Selenium.Automation.Model.Domain.Navigation;
 using Selenium.Automation.Model.Domain.Poduct;
 using Selenium.Automation.Model.Domain.Search;
-using Selenium.Automation.Model.Platform.Communication;
 using Selenium.Automation.Model.Platform.Drivers;
-using Selenium.Automation.Platform.Communication;
-using Selenium.Automation.Platform.Configuration.Environment;
 using Selenium.Automation.Platform.Configuration.Run;
 using Selenium.Automation.Platform.Driver;
 using Selenium.Automation.UI.Login;
@@ -54,9 +51,6 @@ namespace Selenium.Automation.Tests.Bootstrap
 				.SingleInstance();
 			Builder.Register<IRunSettings>(cont => configurationRoot.Get<RunSettings>())
 				.SingleInstance();
-
-			Builder.RegisterType<Client>().As<IClient>().InstancePerDependency();
-			Builder.RegisterType<RestClient>().As<IRestClient>().InstancePerDependency();
 
 			// Logic
 			Builder.RegisterType<LoginContext>().As<ILoginContext>().SingleInstance();
