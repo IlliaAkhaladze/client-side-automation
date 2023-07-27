@@ -6,7 +6,6 @@ using Automation.Common.Environment;
 
 using Microsoft.Extensions.Configuration;
 
-using RestSharp;
 
 using Selenium.Automation.Domain.Login;
 using Selenium.Automation.Domain.Search;

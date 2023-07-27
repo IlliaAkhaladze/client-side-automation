@@ -5,6 +5,14 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <Compile Remove="Features\Homework1.feature.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <SpecFlowFeatureFiles Remove="Features\Homework1.feature" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Autofac.Configuration" Version="6.0.0" />
 		<PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.2.0" />
 		<PackageReference Include="ExtentReports.Core" Version="1.0.3" />
@@ -35,12 +43,14 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<None Update="env.demo.json">
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
-		</None>
+		<Compile Update="Features\PetStore.Definition.cs">
+			<DependentUpon>Pet Store.feature</DependentUpon>
+		</Compile>
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Features\" />
+		<None Update="env.demo.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
 	</ItemGroup>
 </Project>

@@ -34,10 +34,8 @@ namespace RestSharp.Automation.Bootstrap
 				.SingleInstance();
 
 			// Configurations
-			var envrConfig = new EnvironmentConfiguration();
-			configurationRoot.Bind("EnvironmentConfiguration", envrConfig);
-			Builder.Register(p => envrConfig)
-				.AsImplementedInterfaces()
+			Builder.Register<IEnvironmentConfiguration>(context => 
+				configurationRoot.Get<EnvironmentConfiguration>())
 				.SingleInstance();
 
 			// Api Clients
@@ -45,7 +43,10 @@ namespace RestSharp.Automation.Bootstrap
 			Builder.RegisterType<Client>().As<IClient>().InstancePerDependency();
 			Builder.RegisterType<RestClient>().As<IRestClient>().InstancePerDependency();
 
+			Builder.RegisterType<PetStoreApiClient>().As<IPetStoreApiClient>().SingleInstance();
+
 			// Logic Steps
+			Builder.RegisterType<PetStoreSteps>().As<IPetStoreSteps>().InstancePerDependency();
 
 			// Logic Context
 		}

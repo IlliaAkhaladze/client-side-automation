@@ -3,6 +3,7 @@
 using Automation.Common.Environment;
 
 using RestSharp.Automation.Model.Domain.PetStore;
+using RestSharp.Automation.Model.Platform.Client;
 using RestSharp.Automation.Model.Platform.Communication;
 using RestSharp.Automation.Platform.Client;
 using RestSharp.Automation.Platform.Extensions;
@@ -59,12 +60,19 @@ namespace RestSharp.Automation.Domain.PetStore
 		public async Task<StoreResponse> DeleteByOrderIdAsync(
 			string orderId)
 		{
-			var uri = $"/order/{orderId}";
-			var response = await ExecuteDeleteAsync(uri);
-
+			var response = await DeleteResponseAsync(orderId);
 			var model = response.GetModel<StoreResponse>();
 
 			return model;
+		}
+
+		public async Task<ClientResponse> DeleteResponseAsync(
+			string orderId)
+		{
+			var uri = $"/order/{orderId}";
+			var response = await ExecuteDeleteAsync(uri);
+
+			return response;
 		}
 	}
 }

@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 
 using RestSharp.Automation.Model.Domain.PetStore;
+using RestSharp.Automation.Model.Platform.Client;
 
 namespace RestSharp.Automation.Domain.PetStore
 {
@@ -26,6 +27,14 @@ namespace RestSharp.Automation.Domain.PetStore
 			var model = await _petStoreApiClient.DeleteByOrderIdAsync(orderId);
 
 			return model;
+		}
+
+		public async Task<ClientResponse> DeleteResponseOrderAsync(
+			string value)
+		{
+			var clientResponse = await _petStoreApiClient.DeleteResponseAsync(value);
+
+			return clientResponse;
 		}
 
 		public async Task<PostResponse> GetAsync(int orderId)
