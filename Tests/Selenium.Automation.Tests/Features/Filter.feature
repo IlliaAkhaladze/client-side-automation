@@ -12,6 +12,5 @@ Scenario: 1. Check filter feature working with valid data
 Scenario: 2. Verify selected filters are correct
 	Given I open main view
 	And I open goods category 
-	When I get filters by 'platforma' category
-	And I check 'Playstation 5' checkbox
-	Then I see '' filters at page top
+	When I check 'Playstation 5' option in 'platforma' category
+	Then I see 'Playstation 5' filters at page top

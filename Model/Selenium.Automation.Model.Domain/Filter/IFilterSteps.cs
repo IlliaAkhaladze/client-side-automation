@@ -4,7 +4,7 @@
     {
         string[] GetFilters(string category);
         void OpenCategory();
-        string SetSubFilter(bool value, string name); 
-        string[] GetSelectedFilters(string selectedFilter);          
+        void SetSubFilter(bool value, string category, string filterName); 
+        string[] GetSelectedFilters();          
     }
 }

@@ -1,7 +1,9 @@
+using AventStack.ExtentReports.Model;
 using FluentAssertions;
 using Selenium.Automation.Model.Domain.Filter;
 using Selenium.Automation.Model.Domain.Login;
 using Selenium.Automation.TestsData.Storage;
+using Selenium.Automation.UI.Filter;
 using TechTalk.SpecFlow;
 
 namespace Selenium.Automation.Tests.Features
@@ -13,8 +15,7 @@ namespace Selenium.Automation.Tests.Features
         private readonly ILoginSteps _loginSteps;
 
         private string[] _actualFilters;
-        private string _checkedOptions;
-     
+           
         public FilterStepDefinitions( 
 				IFilterSteps filterSteps,
                 ILoginSteps loginSteps)
@@ -50,22 +51,20 @@ namespace Selenium.Automation.Tests.Features
                 .Contain(expectedvalues);
         }
 
-        [When(@"I check '([^']*)' checkbox")]
-        public void WhenICheckCheckbox(string filterName)
+        [When(@"I check '([^']*)' option in '([^']*)' category")]
+        public void WhenICheckOptionInCategory(string filterName, string category)
         {
-            _checkedOptions = _filterSteps.SetSubFilter(true, filterName);
+            _filterSteps.SetSubFilter(true, category, filterName);
         }
+
 
         [Then(@"I see '([^']*)' filters at page top")]
         public void ThenISeeSelectedFilters (string filterSelected)
         {
 
-            _filterSteps.GetSelectedFilters(filterSelected);
-            _filterSteps
-              .Should()
-              .Equals(_checkedOptions);
-                
-                
+           var actualFilters = _filterSteps.GetSelectedFilters();
+            actualFilters.Should()
+              .BeEquivalentTo(filterSelected);
         }
 
 
