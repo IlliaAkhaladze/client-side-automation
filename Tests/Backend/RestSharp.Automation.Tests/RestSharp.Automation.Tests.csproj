@@ -5,7 +5,11 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <Compile Include="Features\Homework.feature" />
+	  <Compile Remove="Features\Homework.feature.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <SpecFlowFeatureFiles Remove="Features\Homework.feature" />
 	</ItemGroup>
 
 	<ItemGroup>

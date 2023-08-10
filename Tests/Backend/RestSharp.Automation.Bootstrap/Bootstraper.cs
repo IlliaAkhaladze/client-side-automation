@@ -13,6 +13,8 @@ using Serilog;
 using Serilog.Events;
 using RestSharp.Automation.Domain.PetStore;
 using RestSharp.Automation.Model.Domain.PetStore;
+using RestSharp.Automation.Domain.PetStoreUser;
+using RestSharp.Automation.Model.Domain.PetStoreUser;
 
 namespace RestSharp.Automation.Bootstrap
 {
@@ -41,13 +43,14 @@ namespace RestSharp.Automation.Bootstrap
 			// Api Clients
 			Builder.RegisterType<Client>().As<IClient>().InstancePerDependency();
 			Builder.RegisterType<RestClient>().As<IRestClient>().InstancePerDependency();
-
-			Builder.RegisterType<PetStoreApiClient>().As<IPetStoreApiClient>().SingleInstance();
+            Builder.RegisterType<UserApiClient>().As<IUserApiClient>().SingleInstance();
+            Builder.RegisterType<PetStoreApiClient>().As<IPetStoreApiClient>().SingleInstance();
 
 			// Logic Steps
 			Builder.RegisterType<PetStoreSteps>().As<IPetStoreSteps>().InstancePerDependency();
+            Builder.RegisterType<UserSteps>().As<IUserSteps>().InstancePerDependency();
 
-			// Logic Context
-		}
-	}
+            // Logic Context
+        }
+    }
 }
