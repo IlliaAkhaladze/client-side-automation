@@ -26,10 +26,14 @@ namespace RestSharp.Automation.Domain.PetStoreUser
             return model; 
         }
 
-        public async Task<UserUpdateRequest> UpdateUserAsync(string userName, UserUpdateRequest updateRequest)
+        public async Task<ResponseMessage> UpdateUserAsync(string userName, UserUpdateRequest updateRequest)
         {
-            var model = await _userApiClient.UpdateUserByName(userName, updateRequest);
+            var model = await _userApiClient.UpdateUserByNameAsync(userName, updateRequest);
             return model;
+        }
+        public async Task<ClientResponse> UpdateUserResponse(string username, UserUpdateRequest userUpdateRequest)
+        {
+            var clientResponse = await _userApiClient.UpdateResponseAsync(username, userUpdateRequest);
         }
 
         public async Task<ResponseMessage> DeleteUserAsync(string userName)
@@ -44,5 +48,7 @@ namespace RestSharp.Automation.Domain.PetStoreUser
 
             return clientResponse;
         }
+
+      
     }
 }

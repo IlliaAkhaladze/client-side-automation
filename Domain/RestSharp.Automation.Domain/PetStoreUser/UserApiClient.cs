@@ -42,13 +42,19 @@ namespace RestSharp.Automation.Domain.PetStoreUser
 
             return response;
         }
+        public async Task<ResponseMessage> UpdateUserByNameAsync(string username)
+        {
+            var response = await DeleteResponseAsync(username);
+            var model = response.GetModel<ResponseMessage>();
 
+            return model;
+        }
         public async Task<ClientResponse> UpdateResponseAsync(
             string username, UserUpdateRequest userUpdateRequest)
         {
             var uri = $"/{username}";
 
-            var response = await ExecutePutAsync<UserUpdateRequest>(uri, userUpdateRequest);
+            var response = await ExecutePutAsync<UserUpdateRequest>(uri, userUpdateRequest, null);
 
             return response;
         }
@@ -67,11 +73,6 @@ namespace RestSharp.Automation.Domain.PetStoreUser
             var response = await ExecuteDeleteAsync(uri);
 
             return response;
-        }
-
-        public Task<UserUpdateRequest> UpdateUserByName(string username, UserUpdateRequest userUpdateRequest)
-        {
-            throw new System.NotImplementedException();
         }
     }
        

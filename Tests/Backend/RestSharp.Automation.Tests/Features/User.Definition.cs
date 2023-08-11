@@ -3,6 +3,7 @@ using RestSharp.Automation.Model.Domain;
 using RestSharp.Automation.Model.Domain.PetStoreUser;
 using RestSharp.Automation.Model.Platform.Client;
 using RestSharp.Automation.TestData.Storage.PetStore;
+using System.Net;
 using System.Threading.Tasks;
 using TechTalk.SpecFlow;
 
@@ -58,7 +59,7 @@ namespace RestSharp.Automation.Tests.Features
         }
 
         [When(@"I get '([^']*)' user information")]
-        public void WhenIGetUserInformation(string dummy)
+        public void WhenIGetUserInformation(string userName)
         {
             throw new PendingStepException();
         }
@@ -70,9 +71,9 @@ namespace RestSharp.Automation.Tests.Features
         }
 
         [When(@"I update '([^']*)' user information")]
-        public void WhenIUpdateUserInformation(string demo)
+        public async Task WhenIUpdateUserInformation(string demo)
         {
-            throw new PendingStepException();
+            _response = await _userSteps.
         }
 
         [Then(@"I see that user info is updated")]
@@ -81,19 +82,37 @@ namespace RestSharp.Automation.Tests.Features
             throw new PendingStepException();
         }
 
+
         [When(@"I delete '([^']*)' user")]
-        public void WhenIDeleteUser(string demo)
+        public async void WhenIDeleteUser(string userName)
         {
-           
+            userName = _postRequest.UserName;
+            _clientResponse = await _userSteps.DeleteResponseUserAsync(_postRequest.UserName);
         }
 
-        [Then(@"I see that user is deleted")]
-        public void ThenISeeThatUserIsDeleted()
+        [Then(@"I see '([^']*)' response code")]
+        public void ThenISeeThatUserIsDeleted(HttpStatusCode expectedValue)
+        {
+            _clientResponse.StatusCode
+                .Should()
+                .Be(expectedValue);
+        }
+
+
+        [When(@"I delete non existing '([^']*)' user")]
+        public void WhenIDeleteNonExistingUser(string dummy)
         {
             throw new PendingStepException();
         }
 
-       
+        [Then(@"I see '([^']*)' response")]
+        public void ThenISeeResponse(string notFound)
+        {
+            throw new PendingStepException();
+        }
+
+
+
 
 
 

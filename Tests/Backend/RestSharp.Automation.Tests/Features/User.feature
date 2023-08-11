@@ -19,7 +19,7 @@ Scenario: 2. Validate that user can be returned succsefully
 Scenario: 3. Validate that user can be returned unsuccsefully
 	Given I have free API
 	When I get 'Dummy' user information
-	Then I see 'NotFound' response code 
+	Then I see
 @Update
 Scenario: 4. Validate that user can be updated
 	Given I have free API
@@ -30,10 +30,10 @@ Scenario: 4. Validate that user can be updated
 Scenario: 5. Validate that user can be deleted succsefully
 	Given I have free API
 	When I delete 'Demo' user
-	Then I see that user is deleted
+	Then I see 'OK' response code
 
 @Delete
 Scenario: 6. Validate that user can be deleted unsuccsefully
 	Given I have free API
-	When I delete 'Dummy' user
-	Then I see 'NotFound' response code 
+	When I delete non existing 'Dummy' user
+	Then I see 'NotFound' response 
