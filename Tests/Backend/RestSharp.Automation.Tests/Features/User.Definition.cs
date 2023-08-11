@@ -73,7 +73,7 @@ namespace RestSharp.Automation.Tests.Features
         [When(@"I update '([^']*)' user information")]
         public async Task WhenIUpdateUserInformation(string demo)
         {
-            _response = await _userSteps.
+            //_response = await _userSteps.
         }
 
         [Then(@"I see that user info is updated")]

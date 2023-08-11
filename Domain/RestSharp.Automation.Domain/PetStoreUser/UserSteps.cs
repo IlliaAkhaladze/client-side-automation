@@ -34,6 +34,7 @@ namespace RestSharp.Automation.Domain.PetStoreUser
         public async Task<ClientResponse> UpdateUserResponse(string username, UserUpdateRequest userUpdateRequest)
         {
             var clientResponse = await _userApiClient.UpdateResponseAsync(username, userUpdateRequest);
+            return clientResponse;
         }
 
         public async Task<ResponseMessage> DeleteUserAsync(string userName)

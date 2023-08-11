@@ -74,6 +74,11 @@ namespace RestSharp.Automation.Domain.PetStoreUser
 
             return response;
         }
+
+        public Task<ResponseMessage> UpdateUserByNameAsync(string username, UserUpdateRequest userUpdateRequest)
+        {
+            throw new System.NotImplementedException();
+        }
     }
        
 }
