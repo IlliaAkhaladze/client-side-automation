@@ -41,16 +41,17 @@ namespace RestSharp.Automation.Bootstrap
 				.SingleInstance();
 
 			// Api Clients
+			Builder.RegisterType<PetStoreApiClient>().As<IPetStoreApiClient>().SingleInstance();
 			Builder.RegisterType<Client>().As<IClient>().InstancePerDependency();
 			Builder.RegisterType<RestClient>().As<IRestClient>().InstancePerDependency();
             Builder.RegisterType<UserApiClient>().As<IUserApiClient>().SingleInstance();
-            Builder.RegisterType<PetStoreApiClient>().As<IPetStoreApiClient>().SingleInstance();
+			Builder.RegisterType<PetStoreApiClient>().As<IPetStoreApiClient>().SingleInstance();
 
 			// Logic Steps
 			Builder.RegisterType<PetStoreSteps>().As<IPetStoreSteps>().InstancePerDependency();
             Builder.RegisterType<UserSteps>().As<IUserSteps>().InstancePerDependency();
 
-            // Logic Context
-        }
-    }
+			// Logic Context
+		}
+	}
 }
