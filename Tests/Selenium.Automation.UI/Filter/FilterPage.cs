@@ -8,7 +8,6 @@ using Selenium.Automation.Platform.WebElements.CheckBox;
 using System.Collections.Generic;
 using System.Linq;
 
-
 namespace Selenium.Automation.UI.Filter
 {
     public class FilterPage : WebPage
@@ -52,5 +51,4 @@ namespace Selenium.Automation.UI.Filter
             this.FindAll<HtmlLink>(new Locator(How.XPath, ".//rz-catalog-settings//li[a]"))
             .ToArray();
     }
-
 }

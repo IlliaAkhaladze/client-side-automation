@@ -5,7 +5,7 @@ using Selenium.Automation.Platform.Element;
 
 namespace Selenium.Automation.Platform.WebElements.CheckBox
 {
-    public class FilterCheckBox : HtmlElement, IFilterCheckbox
+	public class FilterCheckBox : HtmlElement, IFilterCheckbox
     {
 
         private HtmlLink GetFilterLink(string optionLink)

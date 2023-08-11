@@ -13,13 +13,14 @@ namespace Selenium.Automation.Tests.Features
     {
         private readonly IFilterSteps _filterSteps;
         private readonly ILoginSteps _loginSteps;
+        private readonly INavigationSteps _navigationSteps;
 
         private string[] _actualFilters;
-           
+
         public FilterStepDefinitions( 
 				IFilterSteps filterSteps,
                 ILoginSteps loginSteps)
-        {
+        {           
 			_loginSteps = loginSteps;
             _filterSteps = filterSteps;       
         }
@@ -38,38 +39,38 @@ namespace Selenium.Automation.Tests.Features
 
         [When(@"I get filters by '(.*)' category")]
         public void WhenIGetFilters(string category)
-        {
+		{
             _actualFilters = _filterSteps.GetFilters(category);            
-        }
+		}
 
         [Then(@"I see '(.*)' filters")]
         public void ThenISeeFilters(string entityname)
-        {
+		{
             var expectedvalues = GoodsCategoryStorage.Values[entityname];
             _actualFilters
                 .Should()
                 .Contain(expectedvalues);
-        }
+		}
 
         [When(@"I check '([^']*)' option in '([^']*)' category")]
         public void WhenICheckOptionInCategory(string filterName, string category)
-        {
+		{
             _filterSteps.SetSubFilter(true, category, filterName);
-        }
+		}
 
 
         [Then(@"I see '([^']*)' filters at page top")]
         public void ThenISeeSelectedFilters (string filterSelected)
-        {
+		{
 
            var actualFilters = _filterSteps.GetSelectedFilters();
             actualFilters.Should()
               .BeEquivalentTo(filterSelected);
-        }
+		}
 
 
 
 
 
-    }
+	}
 }

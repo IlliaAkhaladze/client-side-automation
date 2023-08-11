@@ -1,13 +1,16 @@
-﻿using Selenium.Automation.Model.Domain.HamburgerMenu;
+﻿using Automation.Common.Environment;
+
+using Selenium.Automation.Model.Domain.HamburgerMenu;
 using Selenium.Automation.Model.Platform.Drivers;
 using Selenium.Automation.Platform.Configuration.Environment;
 using Selenium.Automation.Platform.Factory;
 using Selenium.Automation.Platform.Waiter;
+
 using System;
 
 namespace Selenium.Automation.UI.Menu
 {
-    public class HamburgerMenuSteps : StepsBase, IHamburgerMenuSteps
+	public class HamburgerMenuSteps : StepsBase, IHamburgerMenuSteps
     {
         private IWebDriver _webDriver;
         private HamburgerMenuPage HamburgerMenuPage => PageFactory.Get<HamburgerMenuPage>(_webDriver);

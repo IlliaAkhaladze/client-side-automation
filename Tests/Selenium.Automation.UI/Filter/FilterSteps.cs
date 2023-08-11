@@ -1,13 +1,16 @@
-﻿using Selenium.Automation.Model.Domain.Filter;
+﻿using Automation.Common.Environment;
+
+using Selenium.Automation.Model.Domain.Filter;
 using Selenium.Automation.Model.Platform.Drivers;
 using Selenium.Automation.Platform.Configuration.Environment;
 using Selenium.Automation.Platform.Factory;
+
 using System.Collections.Generic;
 using System.Linq;
 
 namespace Selenium.Automation.UI.Filter
 {
-    public class FilterSteps : StepsBase, IFilterSteps
+	public class FilterSteps : StepsBase, IFilterSteps
     {
         private IWebDriver _webDriver;
         private IEnvironmentConfiguration _environmentConfiguration;

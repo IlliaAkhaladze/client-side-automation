@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Platform\Automation.Common\Automation.Common.csproj" />
     <ProjectReference Include="..\..\Platform\Selenium.Automation.Platform\Selenium.Automation.Platform.csproj" />
   </ItemGroup>
 

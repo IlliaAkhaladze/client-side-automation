@@ -1,6 +1,6 @@
 ﻿namespace Selenium.Automation.Model.Domain.Filter
 {
-    public interface IFilterSteps
+	public interface IFilterSteps
     {
         string[] GetFilters(string category);
         void OpenCategory();
