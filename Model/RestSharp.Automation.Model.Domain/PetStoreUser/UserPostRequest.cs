@@ -1,11 +1,13 @@
-﻿namespace RestSharp.Automation.Model.Domain.PetStoreUser
-{
-    public class UserPostRequest
-    {
-        public string UserName { get; set; }
-   
-        public string Password { get; set; }
-    
+﻿using Newtonsoft.Json;
 
-    }
+namespace RestSharp.Automation.Model.Domain.PetStoreUser
+{
+	public class UserPostRequest
+	{
+		[JsonProperty("username")]
+		public string UserName { get; set; }
+
+		[JsonProperty("password")]
+		public string Password { get; set; }
+	}
 }

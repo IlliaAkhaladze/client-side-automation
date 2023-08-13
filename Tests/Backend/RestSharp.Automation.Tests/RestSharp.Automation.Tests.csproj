@@ -4,8 +4,6 @@
 		<TargetFramework>netcoreapp3.1</TargetFramework>
 	</PropertyGroup>
 
-
-
 	<ItemGroup>
 		<PackageReference Include="Autofac.Configuration" Version="6.0.0" />
 		<PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.2.0" />
@@ -32,13 +30,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\RestSharp.Automation.Bootstrap\RestSharp.Automation.Bootstrap.csproj" />
-	  <ProjectReference Include="..\RestSharp.Automation.TestData\RestSharp.Automation.TestData.csproj" />
+		<ProjectReference Include="..\RestSharp.Automation.Bootstrap\RestSharp.Automation.Bootstrap.csproj" />
+		<ProjectReference Include="..\RestSharp.Automation.TestData\RestSharp.Automation.TestData.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<Compile Update="Features\PetStore.Definition.cs">
 			<DependentUpon>Pet Store.feature</DependentUpon>
+		</Compile>
+		<Compile Update="Features\User.Definition.cs">
+			<DependentUpon>User.feature</DependentUpon>
 		</Compile>
 	</ItemGroup>
 

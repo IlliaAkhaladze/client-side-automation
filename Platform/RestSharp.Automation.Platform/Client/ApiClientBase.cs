@@ -1,5 +1,7 @@
 ﻿using System.Threading.Tasks;
 
+using Newtonsoft.Json;
+
 using RestSharp.Automation.Model.Platform.Client;
 using RestSharp.Automation.Model.Platform.Communication;
 using RestSharp.Automation.Platform.Extensions;
@@ -75,10 +77,10 @@ namespace RestSharp.Automation.Platform.Client
 			var restRequest = new ClientRequest(uri, method);
 			if (body != null)
 			{
-				restRequest.AddJsonBody(body);
+				var json = JsonConvert.SerializeObject(body);
+				restRequest.AddJsonBody(json);
 			}
 
-			restRequest.AddAuthorizationHeader(accessToken);
 			return restRequest;
 		}
 	}
