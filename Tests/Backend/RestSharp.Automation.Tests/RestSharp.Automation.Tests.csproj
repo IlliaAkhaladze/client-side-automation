@@ -4,13 +4,7 @@
 		<TargetFramework>netcoreapp3.1</TargetFramework>
 	</PropertyGroup>
 
-	<ItemGroup>
-	  <Compile Remove="Features\Homework1.feature.cs" />
-	</ItemGroup>
 
-	<ItemGroup>
-	  <SpecFlowFeatureFiles Remove="Features\Homework1.feature" />
-	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Autofac.Configuration" Version="6.0.0" />
