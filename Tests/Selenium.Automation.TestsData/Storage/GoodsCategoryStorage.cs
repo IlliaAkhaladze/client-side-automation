@@ -12,10 +12,9 @@ namespace Selenium.Automation.TestsData.Storage
             new string[]
             {
                 "Nintendo Switch",
-                "Playstation 1",
-                "Playstation 2",
-                "Playstation 3",
-                "Playstation 4",
+                "PlayStation 1",
+                "PlayStation 3",
+                "PlayStation 4",
                 "Playstation 5",
                 "Sega",
                 "Xbox 360",
