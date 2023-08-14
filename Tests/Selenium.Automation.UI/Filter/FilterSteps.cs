@@ -2,7 +2,6 @@
 
 using Selenium.Automation.Model.Domain.Filter;
 using Selenium.Automation.Model.Platform.Drivers;
-using Selenium.Automation.Platform.Configuration.Environment;
 using Selenium.Automation.Platform.Factory;
 
 using System.Collections.Generic;

@@ -4,7 +4,6 @@ using Automation.Common.Environment;
 
 using Selenium.Automation.Model.Domain.Navigation;
 using Selenium.Automation.Model.Platform.Drivers;
-using Selenium.Automation.Platform.Configuration.Environment;
 using Selenium.Automation.Platform.Factory;
 using Selenium.Automation.Platform.Waiter;
 
