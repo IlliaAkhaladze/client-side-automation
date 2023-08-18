@@ -1,18 +1,68 @@
-# Prerequisites
-*.d
-
-/.vs/*
-*/*/bin/*
-*/*/obj/*
-*.DotSettings
-*.feature.cs
-
-/*.user
-/TestResults/Unnamed project__2019-09-16T133908.html
-
+# User-specific files
+*.suo
 *.user
-/*/TestResults
-*.txt
-/**/bin/**
-/**/obj/**
+*.userosscache
+*.sln.docstates
+
+# User-specific files (MonoDevelop/Xamarin Studio)
+*.userprefs
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+
+# Visual Studio 2015 cache/options directory
+.vs/
+# Uncomment if you have tasks that create the project's static files in wwwroot
+#wwwroot/
+
+# MSTest test Results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+# NUNIT
+*.VisualState.xml
+TestResult.xml
+
+# Visual Studio profiler
+*.psess
+*.vsp
+*.vspx
+*.sap
+
+# TFS 2012 Local Workspace
+$tf/
+
+# Guidance Automation Toolkit
+*.gpState
+
+# ReSharper is a .NET coding add-in
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+
+# Build results
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+[Ll]ogs/
+
+# Files built by Visual Studio
+*_h.h
+*.iobj
+*.ipdb
+*_wpftmp.csproj
+*.tlog
+
+# Specflow
+*.feature.cs
 
