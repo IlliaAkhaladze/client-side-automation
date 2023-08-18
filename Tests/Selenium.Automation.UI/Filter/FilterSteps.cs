@@ -3,7 +3,8 @@
 using Selenium.Automation.Model.Domain.Filter;
 using Selenium.Automation.Model.Platform.Drivers;
 using Selenium.Automation.Platform.Factory;
-
+using Selenium.Automation.Platform.Waiter;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -52,10 +53,14 @@ namespace Selenium.Automation.UI.Filter
 
         public string[] GetSelectedFilters()
         {
+            WaitFor.Condition(() => FilterPage.SelectedFiltersView.GetDisplayed(),
+                   "Filters were not selected",
+                   TimeSpan.FromSeconds(5));
             var filterSelected = FilterPage.CatalogSelectedItem;
             var returnedValue = filterSelected.Select(i => i.GetText()).ToArray();
             return returnedValue;
         }
 
+      
     }
 }

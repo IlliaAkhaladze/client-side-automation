@@ -47,6 +47,9 @@ namespace Selenium.Automation.UI.Filter
             return filterCatList.ToArray();
         }
 
+        public HtmlElement SelectedFiltersView =>
+        Find<HtmlElement>(new Locator(How.XPath, ".//rz-selected-filters"));
+
         public HtmlLink[] CatalogSelectedItem =>
             this.FindAll<HtmlLink>(new Locator(How.XPath, ".//rz-catalog-settings//li[a]"))
             .ToArray();
