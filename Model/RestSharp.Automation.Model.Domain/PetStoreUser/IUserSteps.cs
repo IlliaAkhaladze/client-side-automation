@@ -7,9 +7,10 @@ namespace RestSharp.Automation.Model.Domain.PetStoreUser
     {
         Task<ResponseMessage> CreateUserAsync(UserPostRequest postRequest);
         Task<UserPostResponse> GetUserAsync(string userName);
+        Task<UserUpdateResponse> GetUpdUserAsync(string userName);
         Task<ResponseMessage> UpdateUserAsync(string userName, UserUpdateRequest updateRequest);
-        Task<ClientResponse> UpdateUserResponse(string userName, UserUpdateRequest updateRequest);
         Task<ResponseMessage> DeleteUserAsync (string userName);
-        Task<ClientResponse> DeleteResponseUserAsync(string value);
+        Task<ClientResponse> DeleteResponseAsync(string userName);
+        Task<ClientResponse> GetUserResponseAsync(string username);
     }
 }

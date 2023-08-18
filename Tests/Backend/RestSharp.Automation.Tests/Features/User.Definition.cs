@@ -1,9 +1,8 @@
 ﻿using System.Net;
 using System.Threading.Tasks;
-
 using FluentAssertions;
-
 using RestSharp.Automation.Model.Domain;
+using RestSharp.Automation.Model.Domain.PetStore;
 using RestSharp.Automation.Model.Domain.PetStoreUser;
 using RestSharp.Automation.Model.Platform.Client;
 using RestSharp.Automation.TestData.Storage.PetStore;
@@ -19,8 +18,11 @@ namespace RestSharp.Automation.Tests.Features
 		private ResponseMessage _response;
 		private UserPostRequest _postRequest;
 		private ClientResponse _clientResponse;
+		private UserPostResponse _actualUser;
+		private UserUpdateRequest _updateRequest;
+        private UserUpdateResponse _updatedUser;
 
-		public User(
+        public User(
 			IUserSteps userSteps)
 		{
 			_userSteps = userSteps;
@@ -54,79 +56,105 @@ namespace RestSharp.Automation.Tests.Features
 				.Be(19);
 		}
 
-		[When(@"I get '([^']*)' user data by username")]
-		public async Task WhenIGetUserDataByUsername(string username)
-		{
-			_postRequest = UserRequestStorage.Requests[username];
-			_response = await _userSteps.CreateUserAsync(_postRequest);
-		}
+        [Given(@"I create '([^']*)' user")]
+        public async Task GivenICreateUserAsync(string username)
+        {
+            _postRequest = UserRequestStorage.Requests[username];
+            _response = await _userSteps.CreateUserAsync(_postRequest);
+        }
+
+        [When(@"I get created user data by username")]
+        public async Task WhenIGetCreatedUserDataByUsernameAsync()
+        {
+            _actualUser = await _userSteps.GetUserAsync(_postRequest.UserName);
+        }
 
 		[Then(@"I see user information")]
-		public async Task ThenISeeUserInformation()
+		public void ThenISeeUserInformation()
 		{
-			var actualUser = await _userSteps.GetUserAsync(_postRequest.UserName);
-			actualUser.Password.Should().Be(_postRequest.Password);
-
+            _response.Code.
+				Should().
+                Be(200);
+            _actualUser.UserName.
+				Should().
+				Be(_postRequest.UserName);
+            _actualUser.Password.
+				Should().
+				Be(_postRequest.Password);
+			
 		}
 
-		[When(@"I get '([^']*)' user information")]
-		public void WhenIGetUserInformation(string userName)
-		{
-			throw new PendingStepException();
-		}
+        [When(@"I get user by '([^']*)' username")]
+        public async Task WhenIGetUserByUsernameAsync(string username)
+        {
+            _clientResponse = await _userSteps.GetUserResponseAsync(username);
+		
+        }
 
-		[Then(@"I see '([^']*)' response code")]
-		public void ThenISeeResponseCode(string notFound)
-		{
-			throw new PendingStepException();
-		}
-
-		[When(@"I update '([^']*)' user information")]
-		public async Task WhenIUpdateUserInformation(string demo)
-		{
-			//_response = await _userSteps.
+        [When(@"I update created user information with '([^']*)'")]
+        public async Task WhenIUpdateCreatedUserInformationWithAsync(string entityName)
+        {
+			_updateRequest = UserUpdateStorage.Requests[entityName];
+			_response = await _userSteps.UpdateUserAsync(_postRequest.UserName, _updateRequest);
+			_response.Code
+				.Should().Be(200);
 		}
 
 		[Then(@"I see that user info is updated")]
-		public void ThenISeeThatUserInfoIsUpdated()
+		public async Task ThenISeeThatUserInfoIsUpdated()
 		{
-			throw new PendingStepException();
-		}
-
-
-		[When(@"I delete '([^']*)' user")]
-		public async void WhenIDeleteUser(string userName)
-		{
-			userName = _postRequest.UserName;
-			_clientResponse = await _userSteps.DeleteResponseUserAsync(_postRequest.UserName);
-		}
-
-		[Then(@"I see '([^']*)' response code")]
-		public void ThenISeeThatUserIsDeleted(HttpStatusCode expectedValue)
-		{
-			_clientResponse.StatusCode
+            _updatedUser = await _userSteps.GetUpdUserAsync(_updateRequest.UserName);
+            _updatedUser.UserName
+			   .Should()
+			   .Be(_updateRequest.UserName);
+           _updatedUser.Password
+               .Should()
+               .Be(_updateRequest.Password);
+            _updatedUser.Email
+                .Should()
+                .Be(_updateRequest.Email);
+			_updatedUser.Phone
 				.Should()
-				.Be(expectedValue);
+				.Be(_updateRequest.Phone);
+			_updatedUser.FirstName
+				.Should()
+				.Be(_updateRequest.FirstName);
+			_updatedUser.LastName
+				.Should()
+				.Be(_updateRequest.LastName);
+			_updatedUser.UserStatus
+				.Should()
+				.Be(_updateRequest.UserStatus);
+        }
+
+        [When(@"I delete created user")]
+        public async Task WhenIDeleteCreatedUserAsync()
+        {
+            _response = await _userSteps.DeleteUserAsync(_postRequest.UserName);
 		}
 
+        [When(@"I delete '([^']*)' user")]
+        public async Task WhenIDeleteUser(string userName)
+        {
+            _clientResponse = await _userSteps.DeleteResponseAsync(userName); 
+        }
 
-		[When(@"I delete non existing '([^']*)' user")]
-		public void WhenIDeleteNonExistingUser(string dummy)
-		{
-			throw new PendingStepException();
+        [Then(@"I see that user was deleted")]
+        public void ThenISeeThatUserWasDeleted()
+        {
+        	_response.Code.Should().Be(200);
+			_response.Message.Should().Be(_postRequest.UserName);
 		}
 
 		[Then(@"I see '([^']*)' response")]
-		public void ThenISeeResponse(string notFound)
-		{
-			throw new PendingStepException();
-		}
+        public void ThenISeeResponse(HttpStatusCode expectedValue)
+        {
 
+            _clientResponse.StatusCode
+                .Should()
+                .Be(expectedValue);
+        }
 
-
-
-
-
-	}
+    }
 
 }

@@ -13,7 +13,7 @@ namespace RestSharp.Automation.TestData.Storage.PetStore
                 { "Demo", Demo },
 
             };
-        public static UserPostRequest Demo =>
+        private static UserPostRequest Demo =>
             new Faker<UserPostRequest>()
                 .RuleFor(u => u.UserName, u => $"Demo{Guid.NewGuid().ToString("N")}")
                 .RuleFor(u => u.Password, u => "password1234");

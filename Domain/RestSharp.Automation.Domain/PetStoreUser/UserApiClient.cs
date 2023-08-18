@@ -22,14 +22,27 @@ namespace RestSharp.Automation.Domain.PetStoreUser
             client.SetBaseUri($"{baseUri}/user");
         }
   
-        public async Task<UserPostResponse> GetUserByNameAsync(string userName)
+        public async Task<UserPostResponse> GetUserAsync(string userName)
         {
-            var uri = $"/{userName}";
-            var response = await ExecuteGetAsync(uri);
-
+            var response = await GetResponseAsync(userName);
             var model = response.GetModel<UserPostResponse>();
 
             return model;
+        }
+        public async Task<UserUpdateResponse> GetUpdUserAsync(string username)
+        {
+
+            var response = await GetResponseAsync(username);
+            var model = response.GetModel<UserUpdateResponse>();
+
+            return model;
+        }
+
+        public async Task<ClientResponse> GetResponseAsync(string userName)
+        {
+            var uri = $"/{userName}";
+            var response = await ExecuteGetAsync(uri);
+            return response;
         }
 
         public async Task<ResponseMessage> PostAsync(
@@ -42,43 +55,31 @@ namespace RestSharp.Automation.Domain.PetStoreUser
 
             return response;
         }
-        public async Task<ResponseMessage> UpdateUserByNameAsync(string username)
-        {
-            var response = await DeleteResponseAsync(username);
-            var model = response.GetModel<ResponseMessage>();
-
-            return model;
-        }
-        public async Task<ClientResponse> UpdateResponseAsync(
-            string username, UserUpdateRequest userUpdateRequest)
+        public async Task<ResponseMessage> UpdateUserAsync(string username, UserUpdateRequest userUpdateRequest)
         {
             var uri = $"/{username}";
 
-            var response = await ExecutePutAsync<UserUpdateRequest>(uri, userUpdateRequest, null);
-
-            return response;
+            var response = await ExecutePutAsync(uri, userUpdateRequest, null);
+            var model = response.GetModel<ResponseMessage>();
+            return model;
         }
-
-        public async Task<ResponseMessage> DeleteUserByNameAsync(string username)
+        public async Task<ResponseMessage> DeleteUserAsync(string username)
         {
             var response = await DeleteResponseAsync(username);
             var model = response.GetModel<ResponseMessage>();
 
             return model;
         }
-        public async Task<ClientResponse> DeleteResponseAsync(
-            string username)
+        public async Task<ClientResponse> DeleteResponseAsync(string username)
         {
             var uri = $"/{username}";
             var response = await ExecuteDeleteAsync(uri);
-
-            return response;
+                return response;
+           
         }
 
-        public Task<ResponseMessage> UpdateUserByNameAsync(string username, UserUpdateRequest userUpdateRequest)
-        {
-            throw new System.NotImplementedException();
-        }
+        
+              
     }
        
 }

@@ -22,34 +22,38 @@ namespace RestSharp.Automation.Domain.PetStoreUser
 
         public async Task<UserPostResponse> GetUserAsync(string userName)
         {
-            var model = await _userApiClient.GetUserByNameAsync(userName);
+            var model = await _userApiClient.GetUserAsync(userName);
             return model; 
         }
-
-        public async Task<ResponseMessage> UpdateUserAsync(string userName, UserUpdateRequest updateRequest)
+        public async Task<UserUpdateResponse> GetUpdUserAsync(string userName)
         {
-            var model = await _userApiClient.UpdateUserByNameAsync(userName, updateRequest);
+            var model = await _userApiClient.GetUpdUserAsync(userName);
             return model;
         }
-        public async Task<ClientResponse> UpdateUserResponse(string username, UserUpdateRequest userUpdateRequest)
+        public async Task<ResponseMessage> UpdateUserAsync(string userName, UserUpdateRequest updateRequest)
         {
-            var clientResponse = await _userApiClient.UpdateResponseAsync(username, userUpdateRequest);
-            return clientResponse;
+            var model = await _userApiClient.UpdateUserAsync(userName, updateRequest);
+            return model;
         }
+       
 
         public async Task<ResponseMessage> DeleteUserAsync(string userName)
         {
-            var model = await _userApiClient.DeleteUserByNameAsync(userName);
-            return model;
+            var response = await _userApiClient.DeleteUserAsync(userName);
+            return response;
         }
 
-        public async Task<ClientResponse> DeleteResponseUserAsync(string value)
-        {
-            var clientResponse = await _userApiClient.DeleteResponseAsync(value);
+        public async Task<ClientResponse> DeleteResponseAsync(string userName)
+        { 
+            var clientResponse = await _userApiClient.DeleteResponseAsync(userName);
 
             return clientResponse;
         }
+        public async Task<ClientResponse> GetUserResponseAsync(string username)
+        {
+            var clientResponse = await _userApiClient.GetResponseAsync(username);
 
-      
+            return clientResponse;
+        }
     }
 }
