@@ -16,9 +16,9 @@ namespace Selenium.Automation.UI.Menu
         [FindBy(OpenQA.Selenium.Support.PageObjects.How.XPath, ".//rz-mobile-user-menu/button")]
         public HtmlButton HamburgerButton { get; set; }
 
-        [FindBy( OpenQA.Selenium.Support.PageObjects.How.XPath, ".//div[contains(@class, 'side-menu__body')]")]
-        public HtmlElement HamburgerMenuFrame { get; set;}
+        [FindBy(OpenQA.Selenium.Support.PageObjects.How.XPath, ".//div[contains(@class, 'side-menu__body')]")]
+        public HtmlElement HamburgerMenuFrame { get; set; }
 
-       
+
     }
 }

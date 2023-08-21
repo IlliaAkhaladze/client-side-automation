@@ -1,16 +1,16 @@
 ﻿using Automation.Common.Environment;
-
 using Selenium.Automation.Model.Domain.Filter;
 using Selenium.Automation.Model.Platform.Drivers;
 using Selenium.Automation.Platform.Factory;
 using Selenium.Automation.Platform.Waiter;
+using Selenium.Automation.Platform.WebElements;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace Selenium.Automation.UI.Filter
 {
-	public class FilterSteps : StepsBase, IFilterSteps
+    public class FilterSteps : StepsBase, IFilterSteps
     {
         private IWebDriver _webDriver;
         private IEnvironmentConfiguration _environmentConfiguration;
@@ -25,10 +25,10 @@ namespace Selenium.Automation.UI.Filter
         }
         private FilterPage FilterPage => PageFactory.Get<FilterPage>(_webDriver);
 
-        
+
         public string[] GetFilters(string category)
         {
-           var filters = FilterPage.GetFilterCheckBoxes(category);
+            var filters = FilterPage.GetFilterCheckBoxes(category);
             var filterList = new List<string>();
             foreach (var filter in filters)
             {
@@ -48,7 +48,7 @@ namespace Selenium.Automation.UI.Filter
         {
             var subFilters = FilterPage.GetFilterCheckBoxes(category);
             var filter = subFilters.Single(i => i.GetText().Contains(filterName));
-            filter.SetFilter(value, filterName);           
+            filter.SetFilter(value, filterName);
         }
 
         public string[] GetSelectedFilters()
@@ -61,6 +61,15 @@ namespace Selenium.Automation.UI.Filter
             return returnedValue;
         }
 
-      
+        public string[] FilterCategoriesLists()
+        {
+            List<string> filterCatList = new List<string>();
+            foreach (HtmlLink element in FilterPage.FilterCategories)
+            {
+                filterCatList.Add(element.ToString());
+            }
+            return filterCatList.ToArray();
+        }
+
     }
 }
