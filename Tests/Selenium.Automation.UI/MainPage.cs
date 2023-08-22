@@ -21,7 +21,7 @@ namespace Selenium.Automation.UI
 		[FindBy(How.XPath, ".//header")]
 		public HeaderSection HeaderSection { get; set; }
 
-		[FindBy(How.XPath, ".//rz-product-top")]
+		[FindBy(How.XPath, ".//rz-product")]
 		public ProductTopElement ProductTopElement { get; set; }
 
 		[FindBy(How.XPath, ".//rz-product-top")]
