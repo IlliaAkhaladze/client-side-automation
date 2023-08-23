@@ -13,14 +13,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{1C479FF5
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Selenium.Automation.Domain", "Domain\Selenium.Automation.Domain\Selenium.Automation.Domain.csproj", "{95B6DDB9-643E-4056-AD02-18AC84F93D5E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Selenium.Automation.UI", "Tests\Selenium.Automation.UI\Selenium.Automation.UI.csproj", "{F2EB70AE-7F57-40A2-89E5-2627C11249E9}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Selenium.Automation.TestsData", "Tests\Selenium.Automation.TestsData\Selenium.Automation.TestsData.csproj", "{D209EE7F-7069-4C65-A176-1BD0A845DB4A}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Selenium.Automation.Tests.Bootstrap", "Tests\Selenium.Automation.Tests.Bootstrap\Selenium.Automation.Tests.Bootstrap.csproj", "{BFA92A7A-953B-4356-BF6F-B806B82401E6}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Selenium.Automation.Tests", "Tests\Selenium.Automation.Tests\Selenium.Automation.Tests.csproj", "{F872B5E7-C200-4B10-B43C-87FF4053E6ED}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Selenium.Automation.Platform", "Platform\Selenium.Automation.Platform\Selenium.Automation.Platform.csproj", "{AEFC8A62-CAED-4720-BE90-DDB4D2DE2F90}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Selenium.Automation.Model.Domain", "Model\Selenium.Automation.Model.Domain\Selenium.Automation.Model.Domain.csproj", "{A54CBC6A-E3C2-49AC-B0C2-0835BBE81875}"
@@ -51,6 +43,18 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestSharp.Automation.Model.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestSharp.Automation.Domain", "Domain\RestSharp.Automation.Domain\RestSharp.Automation.Domain.csproj", "{5E0CB248-75C4-43DC-BB1B-53E24CAB69F6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{95DE6431-4885-47EF-B65C-9DD8E908B401}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Selenium.Automation.Tests", "Tests\Frontend\Selenium.Automation.Tests\Selenium.Automation.Tests.csproj", "{E4D3F6CC-D854-4D34-A1C3-5AA7A2AB2A3F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Selenium.Automation.Tests.Bootstrap", "Tests\Frontend\Selenium.Automation.Tests.Bootstrap\Selenium.Automation.Tests.Bootstrap.csproj", "{D9AE11AA-91E3-4273-B55E-7DA92981EA78}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Selenium.Automation.Tests.Services", "Tests\Frontend\Selenium.Automation.Tests.Services\Selenium.Automation.Tests.Services.csproj", "{168996FE-4725-4701-97BB-BF513B9B3039}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Selenium.Automation.TestsData", "Tests\Frontend\Selenium.Automation.TestsData\Selenium.Automation.TestsData.csproj", "{066ABFC4-F43A-4D9E-80E2-EEF33E631C34}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Selenium.Automation.UI", "Tests\Frontend\Selenium.Automation.UI\Selenium.Automation.UI.csproj", "{0FFCDD13-001A-44F3-9C2B-EDBC927766F6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,22 +65,6 @@ Global
 		{95B6DDB9-643E-4056-AD02-18AC84F93D5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95B6DDB9-643E-4056-AD02-18AC84F93D5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{95B6DDB9-643E-4056-AD02-18AC84F93D5E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F2EB70AE-7F57-40A2-89E5-2627C11249E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F2EB70AE-7F57-40A2-89E5-2627C11249E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F2EB70AE-7F57-40A2-89E5-2627C11249E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F2EB70AE-7F57-40A2-89E5-2627C11249E9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D209EE7F-7069-4C65-A176-1BD0A845DB4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D209EE7F-7069-4C65-A176-1BD0A845DB4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D209EE7F-7069-4C65-A176-1BD0A845DB4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D209EE7F-7069-4C65-A176-1BD0A845DB4A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BFA92A7A-953B-4356-BF6F-B806B82401E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BFA92A7A-953B-4356-BF6F-B806B82401E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BFA92A7A-953B-4356-BF6F-B806B82401E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BFA92A7A-953B-4356-BF6F-B806B82401E6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F872B5E7-C200-4B10-B43C-87FF4053E6ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F872B5E7-C200-4B10-B43C-87FF4053E6ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F872B5E7-C200-4B10-B43C-87FF4053E6ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F872B5E7-C200-4B10-B43C-87FF4053E6ED}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AEFC8A62-CAED-4720-BE90-DDB4D2DE2F90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AEFC8A62-CAED-4720-BE90-DDB4D2DE2F90}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AEFC8A62-CAED-4720-BE90-DDB4D2DE2F90}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -129,16 +117,32 @@ Global
 		{5E0CB248-75C4-43DC-BB1B-53E24CAB69F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E0CB248-75C4-43DC-BB1B-53E24CAB69F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E0CB248-75C4-43DC-BB1B-53E24CAB69F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4D3F6CC-D854-4D34-A1C3-5AA7A2AB2A3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4D3F6CC-D854-4D34-A1C3-5AA7A2AB2A3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4D3F6CC-D854-4D34-A1C3-5AA7A2AB2A3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4D3F6CC-D854-4D34-A1C3-5AA7A2AB2A3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9AE11AA-91E3-4273-B55E-7DA92981EA78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9AE11AA-91E3-4273-B55E-7DA92981EA78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9AE11AA-91E3-4273-B55E-7DA92981EA78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9AE11AA-91E3-4273-B55E-7DA92981EA78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{168996FE-4725-4701-97BB-BF513B9B3039}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{168996FE-4725-4701-97BB-BF513B9B3039}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{168996FE-4725-4701-97BB-BF513B9B3039}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{168996FE-4725-4701-97BB-BF513B9B3039}.Release|Any CPU.Build.0 = Release|Any CPU
+		{066ABFC4-F43A-4D9E-80E2-EEF33E631C34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{066ABFC4-F43A-4D9E-80E2-EEF33E631C34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{066ABFC4-F43A-4D9E-80E2-EEF33E631C34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{066ABFC4-F43A-4D9E-80E2-EEF33E631C34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FFCDD13-001A-44F3-9C2B-EDBC927766F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FFCDD13-001A-44F3-9C2B-EDBC927766F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FFCDD13-001A-44F3-9C2B-EDBC927766F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FFCDD13-001A-44F3-9C2B-EDBC927766F6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{95B6DDB9-643E-4056-AD02-18AC84F93D5E} = {EB8CE96B-15FE-4299-91C5-4FF0E8FCCE0A}
-		{F2EB70AE-7F57-40A2-89E5-2627C11249E9} = {1C479FF5-2B19-4F1B-96D9-0D9954FB9517}
-		{D209EE7F-7069-4C65-A176-1BD0A845DB4A} = {1C479FF5-2B19-4F1B-96D9-0D9954FB9517}
-		{BFA92A7A-953B-4356-BF6F-B806B82401E6} = {1C479FF5-2B19-4F1B-96D9-0D9954FB9517}
-		{F872B5E7-C200-4B10-B43C-87FF4053E6ED} = {1C479FF5-2B19-4F1B-96D9-0D9954FB9517}
 		{AEFC8A62-CAED-4720-BE90-DDB4D2DE2F90} = {EBB13C36-E527-4050-8681-17B22A57402F}
 		{A54CBC6A-E3C2-49AC-B0C2-0835BBE81875} = {FAFFC467-0405-459C-B14F-F14F5A81B1E6}
 		{0DD610A6-FA63-4A54-830A-B380A8B95D4B} = {FAFFC467-0405-459C-B14F-F14F5A81B1E6}
@@ -153,6 +157,12 @@ Global
 		{C3F935F1-F8A0-4727-B389-1FB8205B5DDA} = {FAFFC467-0405-459C-B14F-F14F5A81B1E6}
 		{94992861-68A0-4312-B694-120213EF5830} = {FAFFC467-0405-459C-B14F-F14F5A81B1E6}
 		{5E0CB248-75C4-43DC-BB1B-53E24CAB69F6} = {EB8CE96B-15FE-4299-91C5-4FF0E8FCCE0A}
+		{95DE6431-4885-47EF-B65C-9DD8E908B401} = {1C479FF5-2B19-4F1B-96D9-0D9954FB9517}
+		{E4D3F6CC-D854-4D34-A1C3-5AA7A2AB2A3F} = {95DE6431-4885-47EF-B65C-9DD8E908B401}
+		{D9AE11AA-91E3-4273-B55E-7DA92981EA78} = {95DE6431-4885-47EF-B65C-9DD8E908B401}
+		{168996FE-4725-4701-97BB-BF513B9B3039} = {95DE6431-4885-47EF-B65C-9DD8E908B401}
+		{066ABFC4-F43A-4D9E-80E2-EEF33E631C34} = {95DE6431-4885-47EF-B65C-9DD8E908B401}
+		{0FFCDD13-001A-44F3-9C2B-EDBC927766F6} = {95DE6431-4885-47EF-B65C-9DD8E908B401}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C0B052B4-533B-4F86-91FC-64A57FFEAE03}

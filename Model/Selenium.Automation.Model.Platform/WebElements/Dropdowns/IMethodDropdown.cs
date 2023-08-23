@@ -3,9 +3,7 @@
 	public interface IMethodDropdown
 	{
 		void OpenDropdown();
-
 		void Select(string option);
-
 		string[] GetOptions();
 	}
 }

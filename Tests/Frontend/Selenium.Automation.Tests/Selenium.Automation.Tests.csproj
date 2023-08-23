@@ -32,12 +32,10 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="XunitXml.TestLogger" Version="3.0.66" />
-    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="114.0.5735.9000" />
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="116.0.5845.9600" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Model\Selenium.Automation.Model.Domain\Selenium.Automation.Model.Domain.csproj" />
-    <ProjectReference Include="..\..\Platform\Selenium.Automation.Platform\Selenium.Automation.Platform.csproj" />
     <ProjectReference Include="..\Selenium.Automation.Tests.Bootstrap\Selenium.Automation.Tests.Bootstrap.csproj" />
     <ProjectReference Include="..\Selenium.Automation.TestsData\Selenium.Automation.TestsData.csproj" />
   </ItemGroup>

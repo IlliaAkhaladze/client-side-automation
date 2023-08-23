@@ -6,7 +6,6 @@ using Automation.Common.Environment;
 
 using Microsoft.Extensions.Configuration;
 
-
 using Selenium.Automation.Domain.Login;
 using Selenium.Automation.Domain.Search;
 using Selenium.Automation.Model.Domain.Filter;
@@ -60,9 +59,9 @@ namespace Selenium.Automation.Tests.Bootstrap
 			Builder.RegisterType<ProductTopSteps>().As<IProductTopSteps>().SingleInstance();
 			Builder.RegisterType<SearchContext>().As<ISearchContext>().SingleInstance();
 			Builder.RegisterType<NavigationSteps>().As<INavigationSteps>().SingleInstance();
-            Builder.RegisterType<HamburgerMenuSteps>().As<IHamburgerMenuSteps>().SingleInstance();
+			Builder.RegisterType<HamburgerMenuSteps>().As<IHamburgerMenuSteps>().SingleInstance();
 			Builder.RegisterType<FilterSteps>().As<IFilterSteps>().SingleInstance();
-            Builder.RegisterType<WebDriver>().As<IWebDriver>().SingleInstance();
+			Builder.RegisterType<WebDriver>().As<IWebDriver>().SingleInstance();
 		}
 	}
 }
