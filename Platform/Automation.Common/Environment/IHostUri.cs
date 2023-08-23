@@ -1,4 +1,4 @@
-﻿namespace Selenium.Automation.Platform.Configuration
+﻿namespace Automation.Common.Environment
 {
 	public interface IHostUri
 	{

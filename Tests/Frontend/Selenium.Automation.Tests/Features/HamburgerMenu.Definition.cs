@@ -27,7 +27,7 @@ namespace Selenium.Automation.Tests.Features
         [When(@"I expand hamburger menu")]
         public void WhenIExpandHamburgerMenu()
         {
-           _hamburgerMenuSteps.OpenMenu();
+            _hamburgerMenuSteps.OpenMenu();
         }
 
         [Then(@"I see hamburger menu expanded")]

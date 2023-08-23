@@ -15,8 +15,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Domain\Selenium.Automation.Domain\Selenium.Automation.Domain.csproj" />
-    <ProjectReference Include="..\..\Platform\Selenium.Automation.Platform\Selenium.Automation.Platform.csproj" />
+    <ProjectReference Include="..\..\..\Domain\Selenium.Automation.Domain\Selenium.Automation.Domain.csproj" />
+    <ProjectReference Include="..\..\..\Model\Selenium.Automation.Model.Domain\Selenium.Automation.Model.Domain.csproj" />
+    <ProjectReference Include="..\..\..\Model\Selenium.Automation.Model.Platform\Selenium.Automation.Model.Platform.csproj" />
+    <ProjectReference Include="..\..\..\Platform\Automation.Common\Automation.Common.csproj" />
+    <ProjectReference Include="..\..\..\Platform\Selenium.Automation.Platform\Selenium.Automation.Platform.csproj" />
     <ProjectReference Include="..\Selenium.Automation.UI\Selenium.Automation.UI.csproj" />
   </ItemGroup>
 </Project>

@@ -17,6 +17,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Model\Selenium.Automation.Model.Domain\Selenium.Automation.Model.Domain.csproj" />
     <ProjectReference Include="..\..\Model\Selenium.Automation.Model.Platform\Selenium.Automation.Model.Platform.csproj" />
+    <ProjectReference Include="..\Automation.Common\Automation.Common.csproj" />
   </ItemGroup>
 
 </Project>
