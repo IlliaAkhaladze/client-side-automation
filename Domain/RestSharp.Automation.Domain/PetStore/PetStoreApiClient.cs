@@ -20,7 +20,6 @@ namespace RestSharp.Automation.Domain.PetStore
 			ILogger logger)
 			: base(client, logger)
 		{
-			//string baseUri = $"https://petstore.swagger.io/v2/";
 			string baseUri = environmentConfiguration.EnvironmentUri;
 			client.SetBaseUri($"{baseUri}/store");
 		}

@@ -1,4 +1,4 @@
-﻿@SerachBF
+﻿@Serach
 Feature: Search
 
 

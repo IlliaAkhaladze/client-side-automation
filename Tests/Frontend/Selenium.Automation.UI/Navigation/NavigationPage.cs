@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 
 using OpenQA.Selenium.Support.PageObjects;
 
@@ -21,24 +20,13 @@ namespace Selenium.Automation.UI.Navigation
 		public HtmlLink NotebookAndPCLink { get; set; }
 
 		public HtmlLink[] NavigationLinks =>
-			this.FindAll<HtmlLink>(new Locator(How.XPath, ".//rz-main-page-sidebar//a[contains(@class, 'menu-categories__link')]"))
+			FindAll<HtmlLink>(new Locator(How.XPath, ".//rz-main-page-sidebar//a[contains(@class, 'menu-categories__link')]"))
 			.ToArray();
 
 		[FindBy(How.XPath, ".//h1")]
 		public HtmlLabel Header { get; set; }
 
-		public HtmlLink GetHtmlLink(string text)
-		{
-			try
-			{
-				var locator = $".//rz-main-page-sidebar//li[.//a[contains(text(), '{text}')]]/a";
-				return Find<HtmlLink>(new Locator(How.XPath, locator));
-			}
-			catch (Exception ex)
-			{
-				Console.WriteLine($"Ex: [{ex}].");
-				return null;
-			}
-		}
+		public HtmlLink GetHtmlLink(string text) =>
+			Find<HtmlLink>(new Locator(How.XPath, $".//rz-main-page-sidebar//li[.//a[contains(text(), '{text}')]]/a"));
 	}
 }

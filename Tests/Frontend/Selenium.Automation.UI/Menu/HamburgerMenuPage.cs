@@ -18,7 +18,5 @@ namespace Selenium.Automation.UI.Menu
 
         [FindBy(OpenQA.Selenium.Support.PageObjects.How.XPath, ".//div[contains(@class, 'side-menu__body')]")]
         public HtmlElement HamburgerMenuFrame { get; set; }
-
-
     }
 }
