@@ -1,7 +1,6 @@
 ﻿namespace RestSharp.Automation.Model.Domain.PetStoreUser
 {
-    public class UserUpdateResponse:UserUpdateRequest
-    {
-
-    }
+	public class UserUpdateResponse : UserUpdateRequest
+	{
+	}
 }

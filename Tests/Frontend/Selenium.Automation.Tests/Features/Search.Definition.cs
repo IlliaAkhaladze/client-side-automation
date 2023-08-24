@@ -41,7 +41,9 @@ namespace Selenium.Automation.Tests.Features
 		public void ThenISeeResults(string expectedValue)
 		{
 			var actualValue = _productTopSteps.GetTitle();
-			actualValue.Should().Be(expectedValue);
+			actualValue
+				.Should()
+				.Be(expectedValue);
 		}
 	}
 }

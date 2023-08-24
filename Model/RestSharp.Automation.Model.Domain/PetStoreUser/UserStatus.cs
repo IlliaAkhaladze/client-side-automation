@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace RestSharp.Automation.Model.Domain.PetStoreUser
+﻿namespace RestSharp.Automation.Model.Domain.PetStoreUser
 {
-    public enum UserStatus
+	public enum UserStatus
     {
         Created = 0,
         Default = 1,

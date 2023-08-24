@@ -1,8 +1,9 @@
 ﻿using System.Net;
 using System.Threading.Tasks;
+
 using FluentAssertions;
+
 using RestSharp.Automation.Model.Domain;
-using RestSharp.Automation.Model.Domain.PetStore;
 using RestSharp.Automation.Model.Domain.PetStoreUser;
 using RestSharp.Automation.Model.Platform.Client;
 using RestSharp.Automation.TestData.Storage.PetStore;
@@ -20,9 +21,9 @@ namespace RestSharp.Automation.Tests.Features
 		private ClientResponse _clientResponse;
 		private UserPostResponse _actualUser;
 		private UserUpdateRequest _updateRequest;
-        private UserUpdateResponse _updatedUser;
+		private UserUpdateResponse _updatedUser;
 
-        public User(
+		public User(
 			IUserSteps userSteps)
 		{
 			_userSteps = userSteps;
@@ -56,44 +57,44 @@ namespace RestSharp.Automation.Tests.Features
 				.Be(19);
 		}
 
-        [Given(@"I create '([^']*)' user")]
-        public async Task GivenICreateUserAsync(string username)
-        {
-            _postRequest = UserRequestStorage.Requests[username];
-            _response = await _userSteps.CreateUserAsync(_postRequest);
-        }
+		[Given(@"I create '([^']*)' user")]
+		public async Task GivenICreateUserAsync(string username)
+		{
+			_postRequest = UserRequestStorage.Requests[username];
+			_response = await _userSteps.CreateUserAsync(_postRequest);
+		}
 
-        [When(@"I get created user data by username")]
-        public async Task WhenIGetCreatedUserDataByUsernameAsync()
-        {
-            _actualUser = await _userSteps.GetUserAsync(_postRequest.UserName);
-        }
+		[When(@"I get created user data by username")]
+		public async Task WhenIGetCreatedUserDataByUsernameAsync()
+		{
+			_actualUser = await _userSteps.GetUserAsync(_postRequest.UserName);
+		}
 
 		[Then(@"I see user information")]
 		public void ThenISeeUserInformation()
 		{
-            _response.Code.
+			_response.Code.
 				Should().
-                Be(200);
-            _actualUser.UserName.
+				Be(200);
+			_actualUser.UserName.
 				Should().
 				Be(_postRequest.UserName);
-            _actualUser.Password.
+			_actualUser.Password.
 				Should().
 				Be(_postRequest.Password);
-			
+
 		}
 
-        [When(@"I get user by '([^']*)' username")]
-        public async Task WhenIGetUserByUsernameAsync(string username)
-        {
-            _clientResponse = await _userSteps.GetUserResponseAsync(username);
-		
-        }
+		[When(@"I get user by '([^']*)' username")]
+		public async Task WhenIGetUserByUsernameAsync(string username)
+		{
+			_clientResponse = await _userSteps.GetUserResponseAsync(username);
 
-        [When(@"I update created user information with '([^']*)'")]
-        public async Task WhenIUpdateCreatedUserInformationWithAsync(string entityName)
-        {
+		}
+
+		[When(@"I update created user information with '([^']*)'")]
+		public async Task WhenIUpdateCreatedUserInformationWithAsync(string entityName)
+		{
 			_updateRequest = UserUpdateStorage.Requests[entityName];
 			_response = await _userSteps.UpdateUserAsync(_postRequest.UserName, _updateRequest);
 			_response.Code
@@ -103,16 +104,16 @@ namespace RestSharp.Automation.Tests.Features
 		[Then(@"I see that user info is updated")]
 		public async Task ThenISeeThatUserInfoIsUpdated()
 		{
-            _updatedUser = await _userSteps.GetUpdUserAsync(_updateRequest.UserName);
-            _updatedUser.UserName
+			_updatedUser = await _userSteps.GetUpdUserAsync(_updateRequest.UserName);
+			_updatedUser.UserName
 			   .Should()
 			   .Be(_updateRequest.UserName);
-           _updatedUser.Password
-               .Should()
-               .Be(_updateRequest.Password);
-            _updatedUser.Email
-                .Should()
-                .Be(_updateRequest.Email);
+			_updatedUser.Password
+				.Should()
+				.Be(_updateRequest.Password);
+			_updatedUser.Email
+				.Should()
+				.Be(_updateRequest.Email);
 			_updatedUser.Phone
 				.Should()
 				.Be(_updateRequest.Phone);
@@ -125,36 +126,35 @@ namespace RestSharp.Automation.Tests.Features
 			_updatedUser.UserStatus
 				.Should()
 				.Be(_updateRequest.UserStatus);
-        }
-
-        [When(@"I delete created user")]
-        public async Task WhenIDeleteCreatedUserAsync()
-        {
-            _response = await _userSteps.DeleteUserAsync(_postRequest.UserName);
 		}
 
-        [When(@"I delete '([^']*)' user")]
-        public async Task WhenIDeleteUser(string userName)
-        {
-            _clientResponse = await _userSteps.DeleteResponseAsync(userName); 
-        }
+		[When(@"I delete created user")]
+		public async Task WhenIDeleteCreatedUserAsync()
+		{
+			_response = await _userSteps.DeleteUserAsync(_postRequest.UserName);
+		}
 
-        [Then(@"I see that user was deleted")]
-        public void ThenISeeThatUserWasDeleted()
-        {
-        	_response.Code.Should().Be(200);
+		[When(@"I delete '([^']*)' user")]
+		public async Task WhenIDeleteUser(string userName)
+		{
+			_clientResponse = await _userSteps.DeleteResponseAsync(userName);
+		}
+
+		[Then(@"I see that user was deleted")]
+		public void ThenISeeThatUserWasDeleted()
+		{
+			_response.Code.Should().Be(200);
 			_response.Message.Should().Be(_postRequest.UserName);
 		}
 
 		[Then(@"I see '([^']*)' response")]
-        public void ThenISeeResponse(HttpStatusCode expectedValue)
-        {
+		public void ThenISeeResponse(HttpStatusCode expectedValue)
+		{
+			_clientResponse.StatusCode
+				.Should()
+				.Be(expectedValue);
+		}
 
-            _clientResponse.StatusCode
-                .Should()
-                .Be(expectedValue);
-        }
-
-    }
+	}
 
 }

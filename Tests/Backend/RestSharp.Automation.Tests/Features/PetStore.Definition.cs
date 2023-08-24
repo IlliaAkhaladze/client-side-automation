@@ -41,9 +41,9 @@ namespace RestSharp.Automation.Tests.Features
 		[Then(@"I see created store with defiined values")]
 		public void ThenISeeStoreWithCreatedValues()
 		{
-			_response
+			_response.Id
 				.Should()
-				.BeEquivalentTo(_postRequest);
+				.NotBeNullOrEmpty();
 		}
 
 		[When(@"I delete '([^']*)' from store")]

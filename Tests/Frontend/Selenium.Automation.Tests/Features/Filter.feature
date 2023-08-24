@@ -1,7 +1,5 @@
-﻿@filter
+﻿@Filter
 Feature: Filter
-
-A short summary of the feature
 
 Scenario: 1. Check filter feature working with valid data
 	Given I open main view

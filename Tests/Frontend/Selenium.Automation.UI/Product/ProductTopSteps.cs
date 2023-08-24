@@ -1,5 +1,4 @@
-﻿
-using Automation.Common.Environment;
+﻿using Automation.Common.Environment;
 
 using Selenium.Automation.Model.Domain.Poduct;
 using Selenium.Automation.Model.Platform.Drivers;
@@ -22,9 +21,7 @@ namespace Selenium.Automation.UI.Product
 		private ProductTopElement ProductTopElement =>
 			PageFactory.Get<MainPage>(_webDriver).ProductTopElement;
 
-		public string GetTitle()
-		{
-			return ProductTopElement.ProductHeaderLabel.GetText().Trim();
-		}
+		public string GetTitle() =>
+			ProductTopElement.ProductHeaderLabel.GetText().Trim();
 	}
 }
