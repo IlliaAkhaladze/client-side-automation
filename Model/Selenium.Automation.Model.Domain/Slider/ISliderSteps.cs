@@ -3,8 +3,6 @@
 	public interface ISliderSteps
 	{
 		int GetCountPost();
-		object GetCurrentPost();
-		void Next();
 		string[] GetPostLinks();
 	}
 }

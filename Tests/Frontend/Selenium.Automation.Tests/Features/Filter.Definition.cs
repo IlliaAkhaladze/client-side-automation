@@ -66,22 +66,5 @@ namespace Selenium.Automation.Tests.Features
 			  .BeEquivalentTo(filterSelected);
 		}
 
-		[Given(@"I have env")]
-		public void GivenIHaveEnv()
-		{
-			throw new PendingStepException();
-		}
-
-		[When(@"I call user api endpoint")]
-		public void WhenICallUserApiEndpoint()
-		{
-			throw new PendingStepException();
-		}
-
-		[Then(@"I see user details")]
-		public void ThenISeeUserDetails()
-		{
-			throw new PendingStepException();
-		}
 	}
 }

@@ -1,12 +1,9 @@
-﻿using System.Linq;
-
-using OpenQA.Selenium.Support.PageObjects;
-
+﻿using OpenQA.Selenium.Support.PageObjects;
 using Selenium.Automation.Model.Platform.Drivers;
 using Selenium.Automation.Model.Platform.Locator;
-using Selenium.Automation.Platform.Element;
 using Selenium.Automation.Platform.Page;
 using Selenium.Automation.Platform.WebElements;
+using System.Linq;
 
 namespace Selenium.Automation.UI.Slider
 {
@@ -22,6 +19,5 @@ namespace Selenium.Automation.UI.Slider
 		public HtmlLink[] PostsElements =>
 			FindAll<HtmlLink>(new Locator(How.XPath, "//app-slider//li//a"))
 			.ToArray();
-
 	}
 }

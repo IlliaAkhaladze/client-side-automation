@@ -24,5 +24,3 @@ Scenario: 3. Demo
 	Given I have env
 	When I call user api endpoint 
 	Then I see user details
-
-

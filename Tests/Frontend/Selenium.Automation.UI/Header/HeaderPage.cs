@@ -1,7 +1,5 @@
 ﻿using System.Linq;
-
 using OpenQA.Selenium.Support.PageObjects;
-
 using Selenium.Automation.Model.Platform.Drivers;
 using Selenium.Automation.Model.Platform.Element;
 using Selenium.Automation.Model.Platform.Locator;
@@ -18,10 +16,6 @@ namespace Selenium.Automation.UI.Header
     }
 
     [FindBy(How.XPath, "//a[contains(@class, 'lang__link')]")]
-        public HtmlLink GetLanguageLink { get; set; }
-
-        
-
-
+        public HtmlLink LanguageLink { get; set; }
     }
 }

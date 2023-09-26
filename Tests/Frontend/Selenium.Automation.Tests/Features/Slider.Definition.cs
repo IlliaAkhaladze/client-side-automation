@@ -1,8 +1,6 @@
 ﻿using FluentAssertions;
-
 using Selenium.Automation.Model.Domain.Login;
 using Selenium.Automation.Model.Domain.Slider;
-
 using TechTalk.SpecFlow;
 
 namespace Selenium.Automation.Tests.Features
@@ -26,12 +24,6 @@ namespace Selenium.Automation.Tests.Features
 		public void GivenIOpenMainView()
 		{
 			_loginSteps.OpenMainView();
-		}
-
-		[When(@"I swap post")]
-		public void WhenISwapPost()
-		{
-			_sliderSteps.Next();
 		}
 
 		[Then(@"I see '([^']*)' posts")]

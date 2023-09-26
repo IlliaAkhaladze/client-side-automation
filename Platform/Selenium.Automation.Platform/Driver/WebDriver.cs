@@ -117,9 +117,6 @@ namespace Selenium.Automation.Platform.Driver
 			_logger.Information("Starting Get Chrome Options.");
 			var options = new ChromeOptions();
 			options.AddArgument("--allow-running-insecure-content");
-			options.AddArgument("--ignore-ssl-errors=yes");
-			options.AddArgument("--ignore-certificate-errors");
-			options.AddArgument("--allow-insecure-localhost");
 			options.AddArgument("test-type");
 			options.AddArgument("--disable-extensions");
 			options.AddArguments("--window-size=1920,1080");

@@ -4,8 +4,5 @@
     {
         void ChangeLanguageUA();
         bool IsLanguageUA();
-      
-
-
     }
 }
