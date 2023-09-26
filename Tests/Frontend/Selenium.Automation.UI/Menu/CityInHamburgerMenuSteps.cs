@@ -28,6 +28,7 @@ namespace Selenium.Automation.UI.Menu
 
         public string GetCityName()
         {
+            
             var cityName = HamburgerMenuPage.CityName.GetText();
             return cityName;
         }

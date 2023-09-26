@@ -35,14 +35,16 @@ namespace Selenium.Automation.Tests.Features
 		public void WhenIChangeLanguageToUA()
 		{
 			_headerSteps.ChangeLanguageUA();
-		}
+          
+        }
 
-		[Then(@"I see language is '([^']*)'")]
-		public void ThenISeeLanguageIs(string p0)
-		{
-			bool actualValue = _headerSteps.IsLanguageUA();
-			actualValue.Should().BeTrue();
-		}
+        [Then(@"I see language is  UA")]
+        public void ThenISeeLanguageIsUA()
+        {
+            bool actualValue = _headerSteps.IsLanguageUA();
+            actualValue.Should().BeTrue();
+        }
 
-	}
+      
+    }
 }

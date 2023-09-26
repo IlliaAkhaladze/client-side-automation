@@ -25,16 +25,14 @@ namespace Selenium.Automation.UI.Header
         private HeaderPage HeaderPage => PageFactory.Get<HeaderPage>(_webDriver);
 
         public bool IsLanguageUA() =>
-            HeaderPage.GetLanguageLink.GetText().Equals(" UA ");
+            HeaderPage.GetLanguageLink.GetText().Equals("RU");
 
-
-        public void ChangeLanguageUA()
+                  
+            public void ChangeLanguageUA()
             {
                 if (!IsLanguageUA())
-            {
-                HeaderPage.GetLanguageLink.Click();
-            }
-             
+                       HeaderPage.GetLanguageLink.Click();
+                       
          
             }
           

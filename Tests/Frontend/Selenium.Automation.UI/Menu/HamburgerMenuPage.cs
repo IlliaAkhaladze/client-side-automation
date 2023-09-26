@@ -4,6 +4,7 @@ using Selenium.Automation.Platform.Element;
 using Selenium.Automation.Platform.Page;
 using Selenium.Automation.Platform.WebElements;
 using OpenQA.Selenium.Support.PageObjects;
+using System.ComponentModel;
 
 namespace Selenium.Automation.UI.Menu
 {
@@ -29,10 +30,11 @@ namespace Selenium.Automation.UI.Menu
 
         
         public HtmlLink CityNameLink (string cityName) =>
-            Find<HtmlLink>(new Locator (How.XPath, $"//a[contains(text(),'{cityName}')]"));
+            Find<HtmlLink>(new Locator (How.XPath, "//ul[contains(@class, 'header-location__popular')]//li[last()]"));
 
         [FindBy(How.XPath, ".//div[contains(@class, 'header-location__footer')]//button")]
         public HtmlButton AcceptButton { get; set; }
 
     }
 }
+// ul[contains(@class, 'header-location__popular')]//li[last()]

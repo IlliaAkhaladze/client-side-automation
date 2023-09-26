@@ -1,6 +1,7 @@
 using FluentAssertions;
 
 using Selenium.Automation.Model.Domain.HamburgerMenu;
+using Selenium.Automation.Model.Domain.Header;
 using Selenium.Automation.Model.Domain.Login;
 using Selenium.Automation.UI.Menu;
 using TechTalk.SpecFlow;
@@ -13,15 +14,18 @@ namespace Selenium.Automation.Tests.Features
 		private readonly IHamburgerMenuSteps _hamburgerMenuSteps;
 		private readonly ILoginSteps _loginSteps;
         private readonly ICityInHamburgerMenuSteps _cityInHamburgerMenuSteps;
+        private readonly IHeaderSteps _headerSteps;
 
         public HamburgerMenuDefinition(
 			IHamburgerMenuSteps hamburgerMenuSteps,
 			ILoginSteps loginSteps,
-            ICityInHamburgerMenuSteps cityInHamburgerMenuSteps)
+            ICityInHamburgerMenuSteps cityInHamburgerMenuSteps,
+            IHeaderSteps headerSteps)
 		{
 			_hamburgerMenuSteps = hamburgerMenuSteps;
 			_loginSteps = loginSteps;
             _cityInHamburgerMenuSteps = cityInHamburgerMenuSteps;
+            _headerSteps = headerSteps;
 
         }
 
@@ -34,7 +38,7 @@ namespace Selenium.Automation.Tests.Features
         [Given(@"I change language to UA")]
         public void GivenIChangeLanguageToUA()
         {
-            throw new PendingStepException();
+            _headerSteps.ChangeLanguageUA();
         }
 
 
