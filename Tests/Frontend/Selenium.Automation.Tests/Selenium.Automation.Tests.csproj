@@ -32,7 +32,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="XunitXml.TestLogger" Version="3.0.66" />
-    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="116.0.5845.9600" />
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="117.0.5938.89" />
   </ItemGroup>
 
   <ItemGroup>
@@ -55,22 +55,29 @@
     </None>
   </ItemGroup>
 
-  <ItemGroup>
-    <Compile Update="Features\Search.Definition.cs">
-      <DependentUpon>Search.feature</DependentUpon>
-    </Compile>
+
+	<ItemGroup>
+		<Compile Update="Features\Search.Definition.cs">
+			<DependentUpon>Search.feature</DependentUpon>
+		</Compile>
 		<Compile Update="Features\Navigation.Definition.cs">
 			<DependentUpon>NavigationScenarios.feature</DependentUpon>
 		</Compile>
-    <Compile Update="Features\HamburgerMenu.Definition.cs">
-      <DependentUpon>HamburgerMenuScenarios.feature</DependentUpon>
-    </Compile>
-    <Compile Update="Features\Filter.Definition.cs">
-      <DependentUpon>Filter.feature</DependentUpon>
-    </Compile>
-  </ItemGroup>
+		<Compile Update="Features\HamburgerMenu.Definition.cs">
+			<DependentUpon>HamburgerMenuScenarios.feature</DependentUpon>
+		</Compile>
+		<Compile Update="Features\Filter.Definition.cs">
+			<DependentUpon>Filter.feature</DependentUpon>
+		</Compile>
+		<Compile Update="Features\Header.Definition.cs">
+			<DependentUpon>Header.feature</DependentUpon>
+		</Compile>
+		<Compile Update="Features\Slider.Definition.cs">
+			<DependentUpon>Slider.feature</DependentUpon>
+		</Compile>
+	</ItemGroup>
 
-  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+	<Target Name="PreBuild" BeforeTargets="PreBuildEvent">
     <Exec Command="taskkill /f /fi &quot;pid gt 0&quot; /im chromedriver.exe" />
   </Target>
 
