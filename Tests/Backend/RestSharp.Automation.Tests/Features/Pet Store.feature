@@ -2,7 +2,7 @@
 
 A short summary of the feature
 
-@tag1
+@Smoke
 Scenario: 1. Validate that store can be created
 	Given I have free API
 	When I create 'Default' store
