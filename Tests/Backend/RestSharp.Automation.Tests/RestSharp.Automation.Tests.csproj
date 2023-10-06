@@ -37,9 +37,12 @@
 	<ItemGroup>
 		<Compile Update="Features\PetStore.Definition.cs">
 			<DependentUpon>Pet Store.feature</DependentUpon>
-		</Compile>
+		</Compile>	
 		<Compile Update="Features\User.Definition.cs">
 			<DependentUpon>User.feature</DependentUpon>
+		</Compile>
+		<Compile Update="Features\Pet.Definition.cs">
+			<DependentUpon>Pet.feature</DependentUpon>
 		</Compile>
 	</ItemGroup>
 

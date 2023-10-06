@@ -1,10 +1,16 @@
-﻿namespace RestSharp.Automation.Model.Domain.PetStore
+﻿using System.Runtime.Serialization;
+
+namespace RestSharp.Automation.Model.Domain.PetStore
 {
-	public enum PetStatus
-	{
-		Unknown = 0,
-		Available = 1,
-		Pending = 2,
-		Sold = 3
-	}
+    public enum PetStatus
+    {
+        [EnumMember(Value = "Unknown")]
+        Unknown = 0,
+        [EnumMember(Value = "Available")]
+        Available = 1,
+        [EnumMember(Value = "Pending")]
+        Pending = 2,
+        [EnumMember(Value = "Sold")]
+        Sold = 3
+    }
 }
