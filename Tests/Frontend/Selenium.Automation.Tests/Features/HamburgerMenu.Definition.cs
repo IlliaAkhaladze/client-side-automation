@@ -55,15 +55,13 @@ namespace Selenium.Automation.Tests.Features
 
         [When(@"I click Change city in Hamburger menu")]
         public void WhenIClickChangeCityInHamburgerMenu()
-        {
-            _cityInHamburgerMenuSteps.ChangeCityButton();
-        }
+        => _cityInHamburgerMenuSteps.ChangeCity();
 
         [When(@"I change city to ""([^""]*)"" in Select city popup")]
         public void WhenIChangeCityToInSelectCityPopup(string city)
         {
             _cityInHamburgerMenuSteps.SetCityName(city);
-            _cityInHamburgerMenuSteps.AcceptButton();
+            _cityInHamburgerMenuSteps.Accept();
         }
 
         [Then(@"I see city is changed to ""([^""]*)"" in Hamburger menu")]

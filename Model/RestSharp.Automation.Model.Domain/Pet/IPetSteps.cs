@@ -7,11 +7,11 @@ namespace RestSharp.Automation.Model.Domain.Pet
     {
         Task<PetPostResponse> CreatePetAsync(PetPostRequest postRequest);
         Task<PetPostResponse> GetPetAsync(string petId);
-        Task<ClientResponse> GetResponseAsync(string petId);
+        Task<ClientResponse> GetPetResponseAsync(string petId);
         Task<ResponseMessage> DeletePetAsync(string petId);
         Task<ClientResponse> DeleteResponsePetAsync(string petId);
         Task<ResponseMessage> UpdatePetAsync(
        string petId, PetUpdateRequest petUpdateRequest);
-        Task<PetUpdateResponse> GetUpdPetAsync(string petId);
+        Task<PetUpdateResponse> GetUpdatePetAsync(string petId);
     }
 }

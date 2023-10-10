@@ -25,23 +25,23 @@ namespace RestSharp.Automation.Domain.Pet
 
 		public async Task<ClientResponse> DeleteResponsePetAsync(
             string petId) =>
-			await _petApiClient.DeleteResponseAsync(petId);
+			await _petApiClient.DeletePetResponseAsync(petId);
 
 		public async Task<PetPostResponse> GetPetAsync(
             string petId)=>
 			await _petApiClient.GetByPetIdAsync(petId);
 
-		public async Task<PetUpdateResponse> GetUpdPetAsync(
+		public async Task<PetUpdateResponse> GetUpdatePetAsync(
             string petId) =>
-			await _petApiClient.GetUpdPetAsync(petId);
+			await _petApiClient.GetUpdatePetAsync(petId);
 
 		public async Task<ResponseMessage> UpdatePetAsync(
             string petId, 
             PetUpdateRequest updateRequest) =>
 			await _petApiClient.UpdatePetAsync(petId, updateRequest);
 
-		public async Task<ClientResponse> GetResponseAsync(
+		public async Task<ClientResponse> GetPetResponseAsync(
             string petId) =>
-			await _petApiClient.GetResponseAsync(petId);
+			await _petApiClient.GetPetResponseAsync(petId);
 	}
 }

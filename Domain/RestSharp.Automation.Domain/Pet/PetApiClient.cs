@@ -31,15 +31,15 @@ namespace RestSharp.Automation.Domain.Pet
             return model;
         }
 
-        public async Task<ClientResponse> GetResponseAsync(string petId)
+        public async Task<ClientResponse> GetPetResponseAsync(string petId)
         {
             var uri = $"/{petId}";
             var response = await ExecuteGetAsync(uri);
             return response;
         }
-        public async Task<PetUpdateResponse> GetUpdPetAsync(string petId)
+        public async Task<PetUpdateResponse> GetUpdatePetAsync(string petId)
         {
-            var response = await GetResponseAsync(petId);
+            var response = await GetPetResponseAsync(petId);
             var model = response.GetModel<PetUpdateResponse>();
             return model;
         }
@@ -55,7 +55,7 @@ namespace RestSharp.Automation.Domain.Pet
         }
         public async Task<ResponseMessage> UpdatePetAsync(string petId, PetUpdateRequest petUpdateRequest)
         {
-            var uri = $"";
+            var uri = "";
             var response = await ExecutePutAsync(uri, petUpdateRequest, null);
             var model = response.GetModel<ResponseMessage>();
             return model;
@@ -64,12 +64,12 @@ namespace RestSharp.Automation.Domain.Pet
         public async Task<ResponseMessage> DeleteByPetIdAsync(
             string petId)
         {
-            var response = await DeleteResponseAsync(petId);
+            var response = await DeletePetResponseAsync(petId);
             var model = response.GetModel<ResponseMessage>();
             return model;
         }
 
-        public async Task<ClientResponse> DeleteResponseAsync(
+        public async Task<ClientResponse> DeletePetResponseAsync(
             string petId)
         {
             var uri = $"/{petId}";

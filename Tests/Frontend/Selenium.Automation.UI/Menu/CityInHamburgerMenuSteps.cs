@@ -22,7 +22,7 @@ namespace Selenium.Automation.UI.Menu
             return cityName;
         }
 
-        public void ChangeCityButton()
+        public void ChangeCity()
         {
             HamburgerMenuPage.ChangeCityButton.Click();
         }
@@ -31,7 +31,7 @@ namespace Selenium.Automation.UI.Menu
         {
             HamburgerMenuPage.GetCityNameLink(cityName).Click();
         }
-        public void AcceptButton()
+        public void Accept()
         {
             HamburgerMenuPage.AcceptButton.Click();
         }

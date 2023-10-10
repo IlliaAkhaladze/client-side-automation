@@ -25,7 +25,8 @@ Scenario: 3. Validate that pet can be returned unsuccsefully
 Scenario: 4. Validate that pet can be deleted succsefully
 	Given I create 'Default' pet
 	When I delete created pet
-	Then I see that pet was deleted
+	Then I see that specific pet was deleted
+	And I see '200' status code
 
 @Delete
 Scenario: 5. Validate error while unsuccsefully deleting the pet  

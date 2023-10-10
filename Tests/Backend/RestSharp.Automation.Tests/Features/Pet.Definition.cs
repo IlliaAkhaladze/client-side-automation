@@ -52,7 +52,7 @@ namespace RestSharp.Automation.Tests.Features
 		[When(@"I get pet by unexisted '([^']*)'")]
 		public async Task WhenIGetPetByUnexisted(string testId)
 		{
-			_clientResponse = await _petSteps.GetResponseAsync(testId);
+			_clientResponse = await _petSteps.GetPetResponseAsync(testId);
 		}
 
 		[When(@"I delete created pet")]
@@ -84,13 +84,18 @@ namespace RestSharp.Automation.Tests.Features
 			  .Should().BeEquivalentTo(_pet);
 		}
 
-		[Then(@"I see that pet was deleted")]
-		public void ThenISeeThatPetWasDeleted()
-		{
-			_responseMessage.Code.Should().Be(200);
-			_responseMessage.Message.Should().Be(_pet.Id);
-		}
+        [Then(@"I see that specific pet was deleted")]
+        public void ThenISeeThatSpecificPetWasDeleted()
+        {
+            _responseMessage.Message.Should().Be(_pet.Id);
+        }
 
+        [Then(@"I see '([^']*)' status code")]
+        public void ThenISeeStatusCode(int statusCode)
+        {
+            _responseMessage.Code.Should().Be(statusCode);
+        }
+		    
 		[Then(@"I see '([^']*)' response")]
 		public void ThenISeeResponse(HttpStatusCode expectedValue)
 		{
@@ -102,7 +107,7 @@ namespace RestSharp.Automation.Tests.Features
 		[Then(@"I see that pet info is updated")]
 		public async Task ThenISeeThatPetInfoIsUpdated()
 		{
-			_updatedPet = await _petSteps.GetUpdPetAsync(_updateRequest.Id);
+			_updatedPet = await _petSteps.GetUpdatePetAsync(_updateRequest.Id);
 			_updatedPet.Status
 				.Should()
 				.Be(_updatedPet.Status);

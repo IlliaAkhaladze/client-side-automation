@@ -2,9 +2,9 @@
 {
     public interface ICityInHamburgerMenuSteps
     {
-        void ChangeCityButton();
+        void ChangeCity();
         string GetCityName();
         void SetCityName(string cityName);
-        void AcceptButton();
+        void Accept();
     }
 }
