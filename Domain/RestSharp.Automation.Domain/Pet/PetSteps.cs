@@ -15,48 +15,33 @@ namespace RestSharp.Automation.Domain.Pet
             _petApiClient = petApiClient;
         }
 
-        public async Task<PetPostResponse> CreatePetAsync(PetPostRequest postRequest)
-        {
-            var model = await _petApiClient.PostAsync(postRequest);
-            return model;
-        }
+        public async Task<PetPostResponse> CreatePetAsync(
+            PetPostRequest postRequest) =>
+			await _petApiClient.PostAsync(postRequest);
 
-        public async Task<ResponseMessage> DeletePetAsync(string petId)
-        {
-            var model = await _petApiClient.DeleteByPetIdAsync(petId);
-            return model;
-        }
+		public async Task<ResponseMessage> DeletePetAsync(
+            string petId) =>
+			await _petApiClient.DeleteByPetIdAsync(petId);
 
-        public async Task<ClientResponse> DeleteResponsePetAsync(
-            string petId)
-        {
-            var clientResponse = await _petApiClient.DeleteResponseAsync(petId);
-            return clientResponse;
-        }
+		public async Task<ClientResponse> DeleteResponsePetAsync(
+            string petId) =>
+			await _petApiClient.DeleteResponseAsync(petId);
 
-        public async Task<PetPostResponse> GetPetAsync(string petId)
-        {
-            var model = await _petApiClient.GetByPetIdAsync(petId);
-            return model;
-        }
+		public async Task<PetPostResponse> GetPetAsync(
+            string petId)=>
+			await _petApiClient.GetByPetIdAsync(petId);
 
-        public async Task<PetUpdateResponse> GetUpdPetAsync(string petId)
-        {
-            var model = await _petApiClient.GetUpdPetAsync(petId);
-            return model;
-        }
+		public async Task<PetUpdateResponse> GetUpdPetAsync(
+            string petId) =>
+			await _petApiClient.GetUpdPetAsync(petId);
 
-        public async Task<ResponseMessage> UpdatePetAsync(string petId, PetUpdateRequest updateRequest)
-        {
-            var model = await _petApiClient.UpdatePetAsync(petId, updateRequest);
-            return model;
-        }
+		public async Task<ResponseMessage> UpdatePetAsync(
+            string petId, 
+            PetUpdateRequest updateRequest) =>
+			await _petApiClient.UpdatePetAsync(petId, updateRequest);
 
-        public async Task<ClientResponse> GetResponseAsync(string petId)
-        {
-            var clientResponse = await _petApiClient.GetResponseAsync(petId);
-
-            return clientResponse;
-        }
-    }
+		public async Task<ClientResponse> GetResponseAsync(
+            string petId) =>
+			await _petApiClient.GetResponseAsync(petId);
+	}
 }
