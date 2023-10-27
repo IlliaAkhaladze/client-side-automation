@@ -65,5 +65,6 @@ namespace Selenium.Automation.Tests.Features
 			actualFilters.Should()
 			  .BeEquivalentTo(filterSelected);
 		}
+
 	}
 }

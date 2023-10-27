@@ -10,19 +10,23 @@ using Selenium.Automation.Domain.Login;
 using Selenium.Automation.Domain.Search;
 using Selenium.Automation.Model.Domain.Filter;
 using Selenium.Automation.Model.Domain.HamburgerMenu;
+using Selenium.Automation.Model.Domain.Header;
 using Selenium.Automation.Model.Domain.Login;
 using Selenium.Automation.Model.Domain.Navigation;
 using Selenium.Automation.Model.Domain.Poduct;
 using Selenium.Automation.Model.Domain.Search;
+using Selenium.Automation.Model.Domain.Slider;
 using Selenium.Automation.Model.Platform.Drivers;
 using Selenium.Automation.Platform.Configuration.Run;
 using Selenium.Automation.Platform.Driver;
 using Selenium.Automation.UI.Filter;
+using Selenium.Automation.UI.Header;
 using Selenium.Automation.UI.Login;
 using Selenium.Automation.UI.Menu;
 using Selenium.Automation.UI.Navigation;
 using Selenium.Automation.UI.Product;
 using Selenium.Automation.UI.Search;
+using Selenium.Automation.UI.Slider;
 
 using Serilog;
 using Serilog.Events;
@@ -62,6 +66,10 @@ namespace Selenium.Automation.Tests.Bootstrap
 			Builder.RegisterType<HamburgerMenuSteps>().As<IHamburgerMenuSteps>().SingleInstance();
 			Builder.RegisterType<FilterSteps>().As<IFilterSteps>().SingleInstance();
 			Builder.RegisterType<WebDriver>().As<IWebDriver>().SingleInstance();
-		}
+			Builder.RegisterType<SliderSteps>().As<ISliderSteps>().SingleInstance();
+            Builder.RegisterType<CityInHamburgerMenuSteps>().As<ICityInHamburgerMenuSteps>().SingleInstance();
+            Builder.RegisterType<HeaderSteps>().As<IHeaderSteps>().SingleInstance();
+
+        }
 	}
 }

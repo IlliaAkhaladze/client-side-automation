@@ -44,6 +44,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestSharp.Automation.Domain", "Domain\RestSharp.Automation.Domain\RestSharp.Automation.Domain.csproj", "{5E0CB248-75C4-43DC-BB1B-53E24CAB69F6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{95DE6431-4885-47EF-B65C-9DD8E908B401}"
+	ProjectSection(SolutionItems) = preProject
+		Tests\Backend\RestSharp.Automation.Tests\xunit.runner.json = Tests\Backend\RestSharp.Automation.Tests\xunit.runner.json
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Selenium.Automation.Tests", "Tests\Frontend\Selenium.Automation.Tests\Selenium.Automation.Tests.csproj", "{E4D3F6CC-D854-4D34-A1C3-5AA7A2AB2A3F}"
 EndProject

@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\Model\RestSharp.Automation.Model.Domain\RestSharp.Automation.Model.Domain.csproj" />
+    <ProjectReference Include="..\..\..\Platform\Selenium.Automation.Platform\Selenium.Automation.Platform.csproj" />
   </ItemGroup>
 
 </Project>

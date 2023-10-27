@@ -59,5 +59,5 @@ namespace RestSharp.Automation.Tests.Features
 				.Should()
 				.Be(expectedValue);
 		}
-	}
+    }
 }
