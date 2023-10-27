@@ -140,7 +140,7 @@ namespace Selenium.Automation.Platform.Driver
 		{
 			_logger.Information("Starting Init Selenium Grid.");
 			var chromeOptions = GetChromeOptions();
-			chromeOptions.AddAdditionalCapability("browser", "chrome", true);
+			chromeOptions.AddAdditionalChromeOption("browser", "chrome");
 			var remoteWebDriver = new RemoteWebDriver(
 				new Uri(_runSettings.SeleniumGrid.HostUri),
 				chromeOptions.ToCapabilities(),

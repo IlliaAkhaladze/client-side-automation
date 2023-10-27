@@ -8,12 +8,12 @@ using OpenQA.Selenium;
 using Selenium.Automation.Model.Platform.Element;
 using Selenium.Automation.Model.Platform.Locator;
 using Selenium.Automation.Model.Platform.Page;
-using Selenium.Automation.Platform.Driver;
 using Selenium.Automation.Platform.Element;
 using Selenium.Automation.Platform.Factory;
 
 using IJavaScriptExecutor = OpenQA.Selenium.IJavaScriptExecutor;
 using IWebDriver = Selenium.Automation.Model.Platform.Drivers.IWebDriver;
+using WebDriver = Selenium.Automation.Platform.Driver.WebDriver;
 
 namespace Selenium.Automation.Platform.Page
 {

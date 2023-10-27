@@ -8,6 +8,5 @@ namespace RestSharp.Automation.Model.Platform.Communication
 	{
 		Task<ClientResponse> ExecuteAsync(ClientRequest request);
 		void SetBaseUri(string baseUri);
-		void AddHttpBasicAuthenticator(string userName, string password);
 	}
 }

@@ -1,9 +1,9 @@
-﻿using OpenQA.Selenium.Support.PageObjects;
-
-using Selenium.Automation.Model.Platform.Locator;
+﻿using Selenium.Automation.Model.Platform.Locator;
 using Selenium.Automation.Model.Platform.WebElements.AutoComplete;
 using Selenium.Automation.Platform.Element;
 using Selenium.Automation.Platform.Waiter;
+
+using SeleniumExtras.PageObjects;
 
 namespace Selenium.Automation.Platform.WebElements.AutoComplete
 {

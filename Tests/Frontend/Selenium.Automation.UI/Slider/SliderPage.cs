@@ -1,8 +1,10 @@
-﻿using OpenQA.Selenium.Support.PageObjects;
-using Selenium.Automation.Model.Platform.Drivers;
+﻿using Selenium.Automation.Model.Platform.Drivers;
 using Selenium.Automation.Model.Platform.Locator;
 using Selenium.Automation.Platform.Page;
 using Selenium.Automation.Platform.WebElements;
+
+using SeleniumExtras.PageObjects;
+
 using System.Linq;
 
 namespace Selenium.Automation.UI.Slider

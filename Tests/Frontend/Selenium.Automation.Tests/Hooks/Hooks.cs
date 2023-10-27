@@ -15,6 +15,7 @@ using Serilog;
 using TechTalk.SpecFlow;
 
 using IWebDriver = Selenium.Automation.Model.Platform.Drivers.IWebDriver;
+using WebDriver = Selenium.Automation.Platform.Driver.WebDriver;
 
 namespace Selenium.Automation.Tests.Hooks
 {

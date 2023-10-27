@@ -154,7 +154,7 @@ namespace Selenium.Automation.Platform.Element
 			NativeElement.GetAttribute("class").Contains(className);
 
 		public bool HasProperty(string property) =>
-			NativeElement.GetProperty(property) != null;
+			NativeElement.GetDomProperty(property) != null;
 
 		private IWebElement ReInitNativeElement()
 		{

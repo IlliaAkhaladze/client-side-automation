@@ -1,12 +1,13 @@
 ﻿using Bogus;
+
 using RestSharp.Automation.Model.Domain.PetStoreUser;
+
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace RestSharp.Automation.TestData.Storage.PetStore
 {
-    public class UserUpdateStorage
+	public class UserUpdateStorage
     {
         public static Dictionary<string, UserUpdateRequest> Requests =>
             new Dictionary<string, UserUpdateRequest>

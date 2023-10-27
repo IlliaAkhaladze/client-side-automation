@@ -2,9 +2,9 @@
 using OpenQA.Selenium.Interactions;
 
 using Selenium.Automation.Model.Platform.Element;
-using Selenium.Automation.Platform.Driver;
 
 using IWebDriver = Selenium.Automation.Model.Platform.Drivers.IWebDriver;
+using WebDriver = Selenium.Automation.Platform.Driver.WebDriver;
 
 namespace Selenium.Automation.Platform.Element
 {

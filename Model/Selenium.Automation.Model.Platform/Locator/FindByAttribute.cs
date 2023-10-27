@@ -1,6 +1,6 @@
 ﻿using System;
 
-using OpenQA.Selenium.Support.PageObjects;
+using SeleniumExtras.PageObjects;
 
 namespace Selenium.Automation.Model.Platform.Locator
 {

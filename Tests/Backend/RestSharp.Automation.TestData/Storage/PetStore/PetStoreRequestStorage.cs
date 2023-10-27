@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Data;
+
 using Bogus;
 
 using RestSharp.Automation.Model.Domain.PetStore;

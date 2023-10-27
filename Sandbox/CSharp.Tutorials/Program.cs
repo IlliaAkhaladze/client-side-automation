@@ -1,6 +1,4 @@
-﻿using CSharp.Tutorials.OOP;
-
-namespace CSharp.Tutorials
+﻿namespace CSharp.Tutorials
 {
 	public interface IAnimal
 	{

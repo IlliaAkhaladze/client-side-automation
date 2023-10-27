@@ -1,7 +1,7 @@
-﻿using OpenQA.Selenium.Support.PageObjects;
-
-using Selenium.Automation.Model.Platform.Locator;
+﻿using Selenium.Automation.Model.Platform.Locator;
 using Selenium.Automation.Platform.Element;
+
+using SeleniumExtras.PageObjects;
 
 namespace Selenium.Automation.Platform.WebElements.Dropdowns
 {

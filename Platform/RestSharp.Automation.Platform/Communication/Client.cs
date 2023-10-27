@@ -1,8 +1,5 @@
-﻿using System;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
-using RestSharp.Authenticators;
 using RestSharp.Automation.Model.Platform.Client;
 using RestSharp.Automation.Model.Platform.Communication;
 
@@ -25,12 +22,12 @@ namespace RestSharp.Automation.Platform.Communication
 
 		public async Task<ClientResponse> ExecuteAsync(ClientRequest request)
 		{
-			if (string.IsNullOrEmpty(_restClient.BaseUrl?.ToString()))
-			{
-				_logger.Warning("Base uri was not set.");
-			}
+			//if (string.IsNullOrEmpty(_restClient.BaseUrl?.ToString()))
+			//{
+			//	_logger.Warning("Base uri was not set.");
+			//}
 
-			var response = await _restClient.ExecuteAsync<IRestResponse>(request);
+			var response = await _restClient.ExecuteAsync<RestResponse>(request);
 			var clientResponse = new ClientResponse
 			{
 				Content = response.Content,
@@ -43,9 +40,10 @@ namespace RestSharp.Automation.Platform.Communication
 			return clientResponse;
 		}
 
-		public void SetBaseUri(string baseUri) => _restClient.BaseUrl = new Uri(baseUri);
-
-		public void AddHttpBasicAuthenticator(string userName, string password) =>
-			_restClient.Authenticator = new HttpBasicAuthenticator(userName, password, Encoding.UTF8);
+		public void SetBaseUri(string baseUri)
+		{
+			var rest = _restClient;
+			//_restClient.AddDefaultUrlSegment = new Uri(baseUri);
+		}
 	}
 }

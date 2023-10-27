@@ -50,8 +50,25 @@ namespace RestSharp.Automation.Bootstrap
 			Builder.RegisterType<PetStoreApiClient>().As<IPetStoreApiClient>().SingleInstance();
             Builder.RegisterType<PetApiClient>().As<IPetApiClient>().SingleInstance();
 
-            // Logic Steps
-            Builder.RegisterType<PetStoreSteps>().As<IPetStoreSteps>().InstancePerDependency();
+		//	Builder.Register(c =>
+		//	{
+		//		c.Resolve
+		//		var options = new RestClientOptions("https://api.myorg.com")
+		//		{
+		//			ThrowOnAnyError = true,
+		//			BaseUrl = 1000
+		//		};
+		//		new RestClient(options)
+		//	})
+		//		.As<IRestClient>().InstancePerDependency();
+
+
+		//		builder.Register(_ => Playwright.CreateAsync().GetAwaiter().GetResult())
+		//.As<IPlaywright>()
+		//.SingleInstance();
+
+			// Logic Steps
+			Builder.RegisterType<PetStoreSteps>().As<IPetStoreSteps>().InstancePerDependency();
             Builder.RegisterType<UserSteps>().As<IUserSteps>().InstancePerDependency();
             Builder.RegisterType<PetSteps>().As<IPetSteps>().InstancePerDependency();
 
