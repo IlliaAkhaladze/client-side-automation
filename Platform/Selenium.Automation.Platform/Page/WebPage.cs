@@ -4,7 +4,6 @@ using System.Diagnostics;
 using System.Threading;
 
 using OpenQA.Selenium;
-
 using Selenium.Automation.Model.Platform.Element;
 using Selenium.Automation.Model.Platform.Locator;
 using Selenium.Automation.Model.Platform.Page;
