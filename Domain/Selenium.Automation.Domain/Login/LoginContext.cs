@@ -16,6 +16,7 @@ namespace Selenium.Automation.Domain.Login
 		{
 			_loginSteps.OpenLoginPage();
 			//_loginSteps.OpenLoginPage();
+			//Login(user);
 			Login(user);
 		}
 
