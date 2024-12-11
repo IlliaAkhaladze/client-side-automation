@@ -15,6 +15,8 @@ namespace Selenium.Automation.Domain.Login
 		public void OpenAndLogin(UserInformation user)
 		{
 			_loginSteps.OpenLoginPage();
+			//_loginSteps.OpenLoginPage();
+			//Login(user);
 			Login(user);
 		}
 
